@@ -28,6 +28,10 @@ from odoo import api, fields, models, _
 class MedicalRecordHabit(models.Model):
 
     _name = 'medical.record.habit'
+    name = fields.Char(
+        string = "Habit"
+    )
+
     
     description = fields.Text(
         string='Habit Description',
@@ -35,7 +39,7 @@ class MedicalRecordHabit(models.Model):
         required=False
     )
     type = fields.Selection(
-        [('ali', 'Alimentary'), ('Phy', 'Physical Activities'), ('hobb', 'Hobbies')],
+        [('ali', 'Alimentary'), ('phy', 'Physical Activities'), ('hobb', 'Hobbies')],
         string='Type',
         help='Habit type.',
         required=True
