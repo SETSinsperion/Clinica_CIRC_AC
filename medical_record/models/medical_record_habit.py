@@ -31,7 +31,7 @@ class MedicalRecordHabit(models.Model):
 
     name = fields.Char(
         string = "Habit"
-        help='Habit name of the patient.',
+        help='Habits of the patient.',
         required=True
     )
     description = fields.Text(
