@@ -28,11 +28,10 @@ from odoo import api, fields, models, _
 class MedicalRecordHabit(models.Model):
 
     _name = 'medical.record.habit'
+    
     name = fields.Char(
         string = "Habit"
     )
-
-    
     description = fields.Text(
         string='Habit Description',
         help='Habit description of the patient.',
