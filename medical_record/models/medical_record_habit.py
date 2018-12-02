@@ -37,7 +37,6 @@ class MedicalRecordHabit(models.Model):
     description = fields.Text(
         string='Habit Description',
         help='Habit description of the patient.',
-        required=False
     )
     type = fields.Selection(
         [('ali', 'Alimentary'), ('phy', 'Physical Activities'), ('hobb', 'Hobbies')],
