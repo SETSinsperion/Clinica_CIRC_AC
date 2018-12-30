@@ -73,7 +73,3 @@ class MedicalRecordBackground(models.Model):
     # ****************
     # comodel_name='model'
     # inverse_name='this_field_model'
-
-
-
-
