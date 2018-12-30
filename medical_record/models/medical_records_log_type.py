@@ -25,42 +25,12 @@
 
 from odoo import api, fields, models, _
 
-class MedicalRecordLog(models.Model):
+class MedicalRecordHabit(models.Model):
 
-    _name = "medical.record.log"
-    
+    _name = "medical.record.log.type"
+
     name = fields.Char(
-        string="Summary",
-        help="Brief description about the entry in the history.",
-        required=True
-    )
-    details = fields.Char(
-        string="Details",
-        help="Details about the entry in the history."
-    )
-    start_datetime = fields.Datetime(
-        string="Start of the stay",
-        help="Start of the stay in medical place.",
-        required=True
-    )
-    end_datetime = fields.Datetime(
-        string="End of the stay",
-        help="End of the stay in medical place.",
-        required=True
-    )
-    medical_employee = fields.Char(
-        string="Medical Employee",
-        help="Medical Employee"
-    )
-    place_id = fields.Many2one(
-        comodel_name="medical.record.place",
-        string="Place",
-        help="Place where stayed the patience.",
-        required=True
-    )
-    log_type_id = fields.Many2one(
-        comodel_name="medical.record.log.type",
         string="Log Type",
-        help="Log Type (example: Medical appointment, Surgical operation, Therapy).",
+        help="Name of the log Type.",
         required=True
     )

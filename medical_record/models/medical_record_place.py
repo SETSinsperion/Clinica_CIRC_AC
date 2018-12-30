@@ -25,42 +25,41 @@
 
 from odoo import api, fields, models, _
 
-class MedicalRecordLog(models.Model):
+class MedicalRecordPlace(models.Model):
 
-    _name = "medical.record.log"
-    
+    _name = "medical.record.place"
+
     name = fields.Char(
-        string="Summary",
-        help="Brief description about the entry in the history.",
+        string="Name",
+        help="Name of the medical place.",
         required=True
     )
-    details = fields.Char(
-        string="Details",
-        help="Details about the entry in the history."
-    )
-    start_datetime = fields.Datetime(
-        string="Start of the stay",
-        help="Start of the stay in medical place.",
+    street = fields.Char(
+        string="Street",
+        help="Stree.t",
         required=True
     )
-    end_datetime = fields.Datetime(
-        string="End of the stay",
-        help="End of the stay in medical place.",
+    street2 = fields.Char(
+        string="Reference Street",
+        help="Reference Street."
+    )
+    ext_number = fields.Char(
+        string="Ext. Number",
+        help="External Number of the place.",
         required=True
     )
-    medical_employee = fields.Char(
-        string="Medical Employee",
-        help="Medical Employee"
+    int_number = fields.Char(
+        string="Int. Number",
+        help="Internal Number of the place."
     )
-    place_id = fields.Many2one(
-        comodel_name="medical.record.place",
-        string="Place",
-        help="Place where stayed the patience.",
-        required=True
+    city = fields.Char()
+    state_id = fields.Many2one(
+        comodel="res.country.state",
+        string='State',
+        ondelete='restrict'
     )
-    log_type_id = fields.Many2one(
-        comodel_name="medical.record.log.type",
-        string="Log Type",
-        help="Log Type (example: Medical appointment, Surgical operation, Therapy).",
-        required=True
+    country_id = fields.Many2one(
+        'res.country',
+        string='Country',
+        ondelete='restrict'
     )
