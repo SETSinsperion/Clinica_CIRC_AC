@@ -44,3 +44,4 @@ class MedicalRecordHabit(models.Model):
         help='Habit type.',
         required=True
     )
+    

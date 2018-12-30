@@ -55,7 +55,4 @@ class MedicalRecordSocioEconomicStudy(models.Model):
         string = 'Number of people living at home.',
         help = 'Number of people living at home.'
     )
-     relatives = fields.Text(
-        string = 'Relatives',
-        help = 'People data living at home (name, age, relationship, occupation, academic degree).',
-    )
+     
