@@ -25,6 +25,8 @@
 
 from . import medical_record_background
 from . import medical_record_habit
+from . import medical_record_place
+from . import medical_record_log_type
 from . import medical_record_log
 from . import medical_record_ses
 from . import medical_record

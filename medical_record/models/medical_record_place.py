@@ -54,12 +54,12 @@ class MedicalRecordPlace(models.Model):
     )
     city = fields.Char()
     state_id = fields.Many2one(
-        comodel="res.country.state",
+        comodel_name="res.country.state",
         string='State',
         ondelete='restrict'
     )
     country_id = fields.Many2one(
-        'res.country',
+        comodel_name='res.country',
         string='Country',
         ondelete='restrict'
     )
