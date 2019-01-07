@@ -27,10 +27,11 @@ from odoo import api, fields, models, _
 class MedicalRecordSocioEconomicStudy(models.Model):
 
     _name = 'medical.record.ses'
+    _rec_name = "relative"
 
-    name = fields.Char(
-        string = "Socio-economic Studies"
-        help='Socio-Economic Studies.',
+    relative = fields.Char(
+        string="Name",
+        help="Relative Name",
         required=True
     )
     job = fields.Char(
@@ -51,7 +52,7 @@ class MedicalRecordSocioEconomicStudy(models.Model):
         help='Marital Status.',
         required=True
     )
-     number_people = fields.Integer(
+    number_people = fields.Integer(
         string = 'Number of people living at home.',
         help = 'Number of people living at home.'
     )

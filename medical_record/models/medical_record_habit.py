@@ -30,7 +30,7 @@ class MedicalRecordHabit(models.Model):
     _name = 'medical.record.habit'
 
     name = fields.Char(
-        string = "Habit"
+        string = "Habit",
         help='Habits of the patient.',
         required=True
     )
@@ -42,6 +42,12 @@ class MedicalRecordHabit(models.Model):
         [('ali', 'Alimentary'), ('phy', 'Physical Activities'), ('hobb', 'Hobbies')],
         string='Type',
         help='Habit type.',
+        required=True
+    )
+    record_id = fields.Many2one(
+        comodel_name="medical.record",
+        string="Medical Record",
+        help="Medical record.",
         required=True
     )
     
