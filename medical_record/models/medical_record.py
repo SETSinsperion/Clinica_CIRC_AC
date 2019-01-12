@@ -56,6 +56,12 @@ class MedicalRecord(models.Model):
         string="Habits",
         help="Habit about the patient."
     )
-
-
+    log_ids = fields.One2many(
+        comodel_name="medical.record.log",
+        inverse_name="record_id",
+        string="Medical Logs",
+        help="Medical Logs about the hospitals, "
+             "clinics, medical centers, etcetera, "
+             "that patient has passed."
+    )
 

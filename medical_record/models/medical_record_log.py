@@ -64,3 +64,9 @@ class MedicalRecordLog(models.Model):
         help="Log Type (example: Medical appointment, Surgical operation, Therapy).",
         required=True
     )
+    record_id = fields.Many2one(
+        comodel_name="medical.record",
+        string="Medical Record",
+        help="Medical record.",
+        required=True
+    )
