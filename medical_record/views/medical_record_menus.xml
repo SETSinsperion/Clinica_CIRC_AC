@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <menuitem id="medical_record_menu_root"
+            name="Records"
+            web_icon="medical_record,static/description/icon.png"
+            action="medical_record.action_open_medical_record_views"
+            sequence="1" />
 
+        <menuitem id="menu_medical_record"
+            name="Records"
+            action="medical_record.action_open_medical_record_views"
+            parent="medical_record_menu_root"
+            sequence="2" />
+
+        <menuitem id="menu_medical_record_config"
+            name="Configuration"
+            parent="medical_record_menu_root"
+            sequence="3" />
     </data>
 </odoo>

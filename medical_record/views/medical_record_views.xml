@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-
+        <!-- madical.record VIEWS -->
+        <record id="medical_record_tree_view" model="ir.ui.view">
+            <field name="name">medical.record.tree.view</field>
+            <field name="model">medical.record</field>
+            <field name="arch" type="xml">
+                <tree name="medical_record_tree">
+                    <field name="name" />
+                    <field name="partner_id" />
+                </tree>
+            </field>
+        </record>
+        <record id="medical_record_form_view" model="ir.ui.view">
+            <field name="name">medical.record.form.view</field>
+            <field name="model">medical.record</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="o_title">
+                            <label for="name" class="oe_edit_only" string="Lead"/>
+                            <h1>
+                                <field name="name" />
+                            </h1>
+                            <label for="name" class="oe_edit_only" string="Lead"/>
+                            <h2>
+                                <field name="partner_id"  />
+                            </h2>
+                        </div>
+                        <notebook>
+                            <page name="diagnosis" string="Diagnosis">
+                                <field name="diagnosis" nolabel="1" />
+                            </page>
+                            <page name="habits" string="Habits">
+                                <field name="habit_ids" nolabel="1">
+                                    <tree name="habits_tree">
+                                        <field name="name" />
+                                        <field name="description" />
+                                        <field name="type" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
     </data>
 </odoo>

@@ -28,6 +28,7 @@ from odoo import api, fields, models, _
 class MedicalRecordHabit(models.Model):
 
     _name = 'medical.record.habit'
+    _description = 'Habits that patients have to complete medical records, both alimentary, physical and hobbies.'
 
     name = fields.Char(
         string = "Habit",

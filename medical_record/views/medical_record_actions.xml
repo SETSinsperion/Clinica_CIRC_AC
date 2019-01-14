@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-
+        <!-- ir.ui.menu => <menuitem>
+             ir.action.report => <report>
+             ir.action.act_window => <act_windows> -->
+        <act_window id="action_open_medical_record_views"
+            name="Records Action"
+            res_model="medical.record"
+            view_mode="tree,form"
+            view_type="form" />
     </data>
 </odoo>

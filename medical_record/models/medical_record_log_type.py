@@ -28,6 +28,7 @@ from odoo import api, fields, models, _
 class MedicalRecordHabit(models.Model):
 
     _name = "medical.record.log.type"
+    _description = "Type of the Logs that medical records have."
 
     name = fields.Char(
         string="Log Type",

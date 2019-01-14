@@ -28,6 +28,7 @@ from odoo import api, fields, models, _
 class MedicalRecordPlace(models.Model):
 
     _name = "medical.record.place"
+    _description = "Places in medical records are clinics, hospitals, mdical centers, etc."
 
     name = fields.Char(
         string="Name",

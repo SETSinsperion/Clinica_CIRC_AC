@@ -28,6 +28,7 @@ from odoo import api, fields, models, _
 class MedicalRecordLog(models.Model):
 
     _name = "medical.record.log"
+    _description = "Logs are records that have in count place, medical employees and another data about patient's medical situation."
     
     name = fields.Char(
         string="Summary",
