@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- CATEGORIES -->
+        <record id="module_category_medical_record" model="ir.module.category">
+            <field name="name">Medical Record</field>
+        </record>
+    </data>
+</odoo>

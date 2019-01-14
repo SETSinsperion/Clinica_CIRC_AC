@@ -27,7 +27,8 @@ from odoo import api, fields, models, _
 class MedicalRecordSocioEconomicStudy(models.Model):
 
     _name = 'medical.record.ses'
-    _rec_name = "relative"
+    _rec_name = 'relative'
+    _description = 'Social-Economic Studies is a relevant medical record zone about patient\'s relatives.'
 
     relative = fields.Char(
         string="Name",

@@ -29,6 +29,7 @@ from odoo import api, fields, models, _
 class MedicalRecord(models.Model):
 
     _name = 'medical.record'
+    _description = 'Electronic version about medical records.'
 
     name = fields.Char(
         string = "Record Number",

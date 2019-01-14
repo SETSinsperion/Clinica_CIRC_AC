@@ -30,6 +30,7 @@ class MedicalRecordBackground(models.Model):
 
     _name = 'medical.record.background'
     _rec_name = 'summary'
+    _description = 'Medicals Backgrounds, both pathological and hereditary.'
 
     summary = fields.Char(
         string='Summary',

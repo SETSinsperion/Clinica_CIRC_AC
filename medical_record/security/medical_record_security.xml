@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-
+        <!-- GROUPS -->
+        <record id="group_medical_record_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="medical_record.module_category_medical_record" />
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]" />
+            <field name="comment">The user will be able to read and edit medical records.</field>
+        </record>
+        <record id="group_medical_record_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="medical_record.module_category_medical_record" />
+            <field name="implied_ids" eval="[(6, 0, [ref('medical_record.group_medical_record_user')])]" />
+            <field name="comment">The manager will be able to do all operations with medical records.</field>
+        </record>
     </data>
 </odoo>

@@ -23,9 +23,10 @@
 # 
 ##########################################################################
 {
-    'name' : 'INSPERION | Medical Records',
+    'name' : 'Medical Records',
+    'author': 'INSPERION',
     'version' : '1.0',
-    'summary': 'INSPERION | Medical Records for CIRC A.C Clinic',
+    'summary': 'Medical Records for CIRC A.C Clinic',
     'sequence': 100,
     'description': """
 INSPERION | Medical Records
@@ -41,7 +42,12 @@ Medical Records for CIRC A.C Clinic
         'base'
     ],
     'data': [
-        
+        'security/medical_record_security.xml',
+        'security/ir.model.access.csv',
+        'data/medical_record_data.xml',
+        'views/medical_record_views.xml',
+        'views/medical_record_actions.xml',
+        'views/medical_record_menus.xml'
     ],
     'demo': [
         
