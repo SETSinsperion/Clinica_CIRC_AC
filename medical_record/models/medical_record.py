@@ -38,7 +38,7 @@ class MedicalRecord(models.Model):
     )
     partner_id = fields.Many2one(
         comodel_name="res.partner",
-        string="Patience",
+        string="Patient",
         help="Information about patient.",
         required=True
     )
@@ -64,5 +64,11 @@ class MedicalRecord(models.Model):
         help="Medical Logs about the hospitals, "
              "clinics, medical centers, etcetera, "
              "that patient has passed."
+    )
+    background_ids = fields.One2many(
+        comodel_name="medical.record.background",
+        inverse_name="record_id",
+        string="Backgrounds",
+        help="Background about the patient."
     )
 

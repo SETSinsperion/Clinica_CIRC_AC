@@ -6,10 +6,10 @@ access_medical_record_log_manager,medical.record.log manager,model_medical_recor
 access_medical_record_place_manager,medical.record.place manager,model_medical_record_place,group_medical_record_manager,1,1,1,1
 access_medical_record_ses_manager,medical.record.ses manager,model_medical_record_ses,group_medical_record_manager,1,1,1,1
 access_medical_record_manager,medical.record manager,model_medical_record,group_medical_record_manager,1,1,1,1
-access_medical_record_background_user,medical.record.background user,model_medical_record_background,group_medical_record_user,1,1,0,0
-access_medical_record_habit_user,medical.record.habit user,model_medical_record_habit,group_medical_record_user,1,1,0,0
-access_medical_record_log_type_user,medical.record.log.type user,model_medical_record_log_type,group_medical_record_user,1,1,0,0
-access_medical_record_log_user,medical.record.log user,model_medical_record_log,group_medical_record_user,1,1,0,0
-access_medical_record_place_user,medical.record.place user,model_medical_record_place,group_medical_record_user,1,1,0,0
-access_medical_record_ses_user,medical.record.ses user,model_medical_record_ses,group_medical_record_user,1,1,0,0
-access_medical_record_user,medical.record user,model_medical_record,group_medical_record_user,1,1,0,0
+access_medical_record_background_user,medical.record.background user,model_medical_record_background,group_medical_record_user,1,0,0,0
+access_medical_record_habit_user,medical.record.habit user,model_medical_record_habit,group_medical_record_user,1,0,0,0
+access_medical_record_log_type_user,medical.record.log.type user,model_medical_record_log_type,group_medical_record_user,1,0,0,0
+access_medical_record_log_user,medical.record.log user,model_medical_record_log,group_medical_record_user,1,0,0,0
+access_medical_record_place_user,medical.record.place user,model_medical_record_place,group_medical_record_user,1,0,0,0
+access_medical_record_ses_user,medical.record.ses user,model_medical_record_ses,group_medical_record_user,1,0,0,0
+access_medical_record_user,medical.record user,model_medical_record,group_medical_record_user,1,0,0,0

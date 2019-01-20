@@ -21,13 +21,13 @@
                     </header>
                     <sheet>
                         <div class="o_title">
-                            <label for="name" class="oe_edit_only" string="Lead"/>
+                            <label for="name" class="oe_edit_only" />
                             <h1>
                                 <field name="name" />
                             </h1>
-                            <label for="name" class="oe_edit_only" string="Lead"/>
+                            <label for="partner_id" class="oe_edit_only" />
                             <h2>
-                                <field name="partner_id"  />
+                                <field name="partner_id" domain="[('customer', '=', True)]" />
                             </h2>
                         </div>
                         <notebook>
@@ -40,6 +40,26 @@
                                         <field name="name" />
                                         <field name="description" />
                                         <field name="type" />
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="background" string="Backgrounds">
+                                <field name="background_ids" nolabel="1" >
+                                    <tree name="background_tree">
+                                        <field name="summary" />
+                                        <field name="description" />
+                                        <field name="type" />
+                                    </tree>
+                                </field>
+                            </page> 
+                             <page name="logs" string="Logs">
+                                <field name="log_ids" nolabel="1">
+                                    <tree name="logs_tree">
+                                        <field name="name" />
+                                        <field name="details" />
+                                        <field name="start_datetime" />
+                                        <field name="end_datetime" />
+                                        <field name="medical_employee" />
                                     </tree>
                                 </field>
                             </page>

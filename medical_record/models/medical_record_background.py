@@ -48,6 +48,13 @@ class MedicalRecordBackground(models.Model):
         help='Background type.',
         required=True
     )
+    record_id = fields.Many2one(
+        comodel_name="medical.record",
+        string="Medical Record",
+        help="Medical record.",
+        required=True
+    )
+
 
     # # Atomics
     # Integer
