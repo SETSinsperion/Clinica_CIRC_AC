@@ -71,3 +71,4 @@ class MedicalRecordLog(models.Model):
         help="Medical record.",
         required=True
     )
+    
