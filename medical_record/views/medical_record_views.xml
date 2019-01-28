@@ -1,7 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <!-- madical.record VIEWS -->
+        <!-- medical.record.background VIEWS -->
+        <record id="medical_record_background_form_view" model="ir.ui.view">
+            <field name="name">medical.record.background.form.view</field>
+            <field name="model">medical.record.background</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="o_title">
+                            <label for="summary" class="oe_edit_only" />
+                            <h1>
+                                <field name="summary" />
+                            </h1>
+                            <label for="record_id" string="For" />
+                            <h3>
+                                <field name="record_id" />
+                            </h3>
+                        </div>
+                        <group>
+                            <group>
+                                <label for="description" colspan="2" />
+                            </group>
+                            <group>
+                                <field name="type" />
+                            </group>
+                        </group>
+                        <field name="description" nolabel="1" />
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- medical.record.habit VIEWS -->
+        <record id="medical_record_habit_form_view" model="ir.ui.view">
+            <field name="name">medical.record.habit.form.view</field>
+            <field name="model">medical.record.habit</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="o_title">
+                            <label for="name" class="oe_edit_only" />
+                            <h1>
+                                <field name="name" />
+                            </h1>
+                            <label for="record_id" string="For" />
+                            <h3>
+                                <field name="record_id" />
+                            </h3>
+                        </div>
+                        <group>
+                            <group>
+                                <label for="description" colspan="2" />
+                            </group>
+                            <group>
+                                <field name="type" />
+                            </group>
+                        </group>
+                        <field name="description" nolabel="1" />
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- medical.record VIEWS -->
+        <record id="medical_record_kanban_view" model="ir.ui.view">
+            <field name="name">medical.record.kanban.view</field>
+            <field name="model">medical.record</field>
+            <field name="arch" type="xml">
+                <kanban name="medical_record_kanban">
+                    <field name="name" />
+                    <field name="partner_id" />
+                    <!-- Card template -->
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click oe_kanban_content">
+                                <img class="o_kanban_image"
+                                    t-att-src="kanban_image('medical.record', 'profile_image', record.id)"
+                                    t-att-alt="record.partner_id.name" />
+                                <div style="margin-left: 10px;">
+                                    <div class="o_kanban_record_title">
+                                        <strong><field name="partner_id" /></strong>
+                                    </div>
+                                    <div class="o_kanban_record_subtitle">
+                                        <field name="name" />
+                                    </div>
+                                    <div class="o_kanban_record_bottom">
+                                        <div class="oe_kanban_bottom_right">
+                                            <field name="name" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
         <record id="medical_record_tree_view" model="ir.ui.view">
             <field name="name">medical.record.tree.view</field>
             <field name="model">medical.record</field>
@@ -20,15 +117,20 @@
                     <header>
                     </header>
                     <sheet>
-                        <div class="o_title">
-                            <label for="name" class="oe_edit_only" />
+                        <div class="oe_button_box" name="button_box">
+
+                        </div>
+                        <field name="profile_image" widget="image" class="oe_avatar"
+                            options="{&quot;preview_image&quot;: &quot;image_medium&quot;, &quot;size&quot;: [90, 90]}"/>
+                        <div class="oe_title" style="width: 80%;">
+                            <h3 style="width: 50%;">
+                                <field name="name" placeholder="Record Number" />
+                            </h3>
                             <h1>
-                                <field name="name" />
+                                <field name="partner_id"
+                                       domain="[('customer', '=', True)]"
+                                       placeholder="Patient name" />
                             </h1>
-                            <label for="partner_id" class="oe_edit_only" />
-                            <h2>
-                                <field name="partner_id" domain="[('customer', '=', True)]" />
-                            </h2>
                         </div>
                         <notebook>
                             <page name="diagnosis" string="Diagnosis">
