@@ -7,7 +7,7 @@
         <act_window id="action_open_medical_record_views"
             name="Records Action"
             res_model="medical.record"
-            view_mode="tree,form"
+            view_mode="kanban,tree,form"
             view_type="form" />
     </data>
 </odoo>
