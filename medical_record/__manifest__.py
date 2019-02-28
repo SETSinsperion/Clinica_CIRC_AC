@@ -39,7 +39,9 @@ Medical Records for CIRC A.C Clinic
     'category': 'Sales Management',
     'website': 'https://www.facebook.com/InsperionInYourWorld/',
     'depends' : [
-        'base'
+        'base',
+        'contacts',
+        'hr'
     ],
     'data': [
         'security/medical_record_security.xml',

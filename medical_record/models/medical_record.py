@@ -43,9 +43,9 @@ class MedicalRecord(models.Model):
         required=True
     )
     profile_image = fields.Binary(
-        string = "Patient photo",
-        attachment=True,
-        help="Patient photo."
+        string="Patient photo",
+        help="Patient photo.",
+        related="partner_id.image"
     )
     diagnosis = fields.Text(
         string = "Diagnosis",
