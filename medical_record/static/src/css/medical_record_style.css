@@ -1,0 +1,21 @@
+/* KANBAN STYLE */
+
+.medical_record_kanban_box {
+    background-color: rgb(255, 233, 165) !important;
+}
+
+.o_kanban_record_title > strong {
+    color: rgb(0, 17, 90);
+}
+
+.o_kanban_record_subtitle {
+
+}
+
+.o_kanban_datas {
+    margin-top: 10px;
+}
+
+.o_kanban_data {
+    display: block;
+}
