@@ -42,6 +42,15 @@ class MedicalRecord(models.Model):
         help="Information about patient.",
         required=True
     )
+    partner_email = fields.Char(
+        related="partner_id.email"
+    )
+    partner_phone = fields.Char(
+        related="partner_id.phone"
+    )
+    partner_mobile = fields.Char(
+        related="partner_id.mobile"
+    )
     profile_image = fields.Binary(
         string="Patient photo",
         help="Patient photo.",
@@ -72,4 +81,3 @@ class MedicalRecord(models.Model):
         string="Backgrounds",
         help="Background about the patient."
     )
-

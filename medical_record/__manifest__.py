@@ -40,19 +40,20 @@ Medical Records for CIRC A.C Clinic
     'website': 'https://www.facebook.com/InsperionInYourWorld/',
     'depends' : [
         'base',
+        'web',
         'contacts',
         'hr'
     ],
     'data': [
         'security/medical_record_security.xml',
         'security/ir.model.access.csv',
-        'data/medical_record_data.xml',
+        'views/web_assets.xml',
         'views/medical_record_views.xml',
         'views/medical_record_actions.xml',
         'views/medical_record_menus.xml'
     ],
     'demo': [
-        
+        'data/medical_record_data.xml',
     ],
     'qweb': [],
     'installable': True,
