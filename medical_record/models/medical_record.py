@@ -30,6 +30,9 @@ class MedicalRecord(models.Model):
 
     _name = 'medical.record'
     _description = 'Electronic version about medical records.'
+    # mail.thread = Basic Chatter integration.
+    # mail.activity.mixin = Basic Activity integration for chatter.
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(
         string = "Record Number",
