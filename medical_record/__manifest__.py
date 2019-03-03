@@ -42,7 +42,8 @@ Medical Records for CIRC A.C Clinic
         'base',
         'web',
         'contacts',
-        'hr'
+        'hr',
+        'mail'
     ],
     'data': [
         'security/medical_record_security.xml',
