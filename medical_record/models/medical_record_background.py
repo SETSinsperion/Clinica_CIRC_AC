@@ -38,7 +38,7 @@ class MedicalRecordBackground(models.Model):
         required=True
     )
     description = fields.Text(
-        string='Background Description',
+        string='Details',
         help='Background description of the patient.',
         required=True
     )

@@ -15,8 +15,8 @@
                             <h1>
                                 <field name="summary" />
                             </h1>
-                            <label for="record_id" string="For" />
                             <h3>
+                                <label for="record_id" string="For " />
                                 <field name="record_id" />
                             </h3>
                         </div>
@@ -31,6 +31,16 @@
                         <field name="description" nolabel="1" />
                     </sheet>
                 </form>
+            </field>
+        </record>
+        <record id="medical_record_background_tree_view" model="ir.ui.view">
+            <field name="name">medical.record.background.tree.view</field>
+            <field name="model">medical.record.background</field>
+            <field name="arch" type="xml">
+                <tree name="medical_record_background_tree">
+                    <field name="summary" />
+                    <field name="type" />
+                </tree>
             </field>
         </record>
         <!-- medical.record.habit VIEWS -->
@@ -157,9 +167,9 @@
                                     </tree>
                                 </field>
                             </page>
-                            <page name="background" string="Backgrounds">
+                            <page name="backgrounds" string="Backgrounds">
                                 <field name="background_ids" nolabel="1" >
-                                    <tree name="background_tree">
+                                    <tree name="background_tree" editable="top">
                                         <field name="summary" />
                                         <field name="description" />
                                         <field name="type" />

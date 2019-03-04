@@ -9,5 +9,11 @@
             res_model="medical.record"
             view_mode="kanban,tree,form"
             view_type="form" />
+
+        <act_window id="action_open_medical_record_background_views"
+            name="Backgrounds"
+            res_model="medical.record.background"
+            view_mode="tree,form"
+            view_type="form" />
     </data>
 </odoo>
