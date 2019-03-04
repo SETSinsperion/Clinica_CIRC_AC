@@ -15,5 +15,11 @@
             res_model="medical.record.background"
             view_mode="tree,form"
             view_type="form" />
+
+        <act_window id="action_open_medical_record_habit_views"
+            name="Habits"
+            res_model="medical.record.habit"
+            view_mode="tree,form"
+            view_type="form" />
     </data>
 </odoo>
