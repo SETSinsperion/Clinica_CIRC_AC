@@ -13,9 +13,50 @@
             parent="medical_record_menu_root"
             sequence="2" />
 
+        <menuitem id="menu_patient_information"
+            name="Patient Information"
+            parent="medical_record_menu_root"
+            sequence="3" />
+
+        <menuitem id="menu_backgrounds"
+            name="Backgrounds"
+            action="medical_record.action_open_medical_record_background_views"
+            parent="menu_patient_information"
+            sequence="5" />
+
+        <!-- <menuitem id="menu_habits"
+            name="Habits"
+            action="medical_record.action_open_medical_record_habit_views"
+            parent="menu_patient_information"
+            sequence="6" />
+
+        <menuitem id="menu_logs"
+            name="Medical Logs"
+            action="medical_record.action_open_medical_record_log_views"
+            parent="menu_patient_information"
+            sequence="7" />
+
+        <menuitem id="menu_log_types"
+            name="Medical Log Types"
+            action="medical_record.action_open_medical_record_log_type_views"
+            parent="menu_patient_information"
+            sequence="8" />
+
+        <menuitem id="menu_ses"
+            name="Social Economic Studies"
+            action="medical_record.action_open_medical_record_ses_views"
+            parent="menu_patient_information"
+            sequence="9" />
+
+        <menuitem id="menu_medical_places"
+            name="Medical Places"
+            action="medical_record.action_open_medical_record_place_views"
+            parent="menu_patient_information"
+            sequence="10" /> -->
+
         <menuitem id="menu_medical_record_config"
             name="Configuration"
             parent="medical_record_menu_root"
-            sequence="3" />
+            sequence="4" />
     </data>
 </odoo>
