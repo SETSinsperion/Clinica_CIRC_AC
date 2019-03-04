@@ -24,13 +24,13 @@
             parent="menu_patient_information"
             sequence="5" />
 
-        <!-- <menuitem id="menu_habits"
+        <menuitem id="menu_habits"
             name="Habits"
             action="medical_record.action_open_medical_record_habit_views"
             parent="menu_patient_information"
             sequence="6" />
 
-        <menuitem id="menu_logs"
+        <!-- <menuitem id="menu_logs"
             name="Medical Logs"
             action="medical_record.action_open_medical_record_log_views"
             parent="menu_patient_information"

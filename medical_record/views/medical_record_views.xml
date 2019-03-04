@@ -2,6 +2,17 @@
 <odoo>
     <data>
         <!-- medical.record.background VIEWS -->
+        <record id="medical_record_background_tree_view" model="ir.ui.view">
+            <field name="name">medical.record.background.tree.view</field>
+            <field name="model">medical.record.background</field>
+            <field name="arch" type="xml">
+                <tree name="medical_record_background_tree">
+                    <field name="summary" />
+                    <field name="record_id" />
+                    <field name="type" />
+                </tree>
+            </field>
+        </record>
         <record id="medical_record_background_form_view" model="ir.ui.view">
             <field name="name">medical.record.background.form.view</field>
             <field name="model">medical.record.background</field>
@@ -17,7 +28,7 @@
                             </h1>
                             <h3>
                                 <label for="record_id" string="For " />
-                                <field name="record_id" />
+                                <field name="record_id" readonly="1" />
                             </h3>
                         </div>
                         <group>
@@ -33,17 +44,19 @@
                 </form>
             </field>
         </record>
-        <record id="medical_record_background_tree_view" model="ir.ui.view">
-            <field name="name">medical.record.background.tree.view</field>
-            <field name="model">medical.record.background</field>
+
+        <!-- medical.record.habit VIEWS -->
+        <record id="medical_record_habit_tree_view" model="ir.ui.view">
+            <field name="name">medical.record.habit.tree.view</field>
+            <field name="model">medical.record.habit</field>
             <field name="arch" type="xml">
-                <tree name="medical_record_background_tree">
-                    <field name="summary" />
+                <tree name="medical_record_habit_tree">
+                    <field name="name" />
+                    <field name="record_id" />
                     <field name="type" />
                 </tree>
             </field>
         </record>
-        <!-- medical.record.habit VIEWS -->
         <record id="medical_record_habit_form_view" model="ir.ui.view">
             <field name="name">medical.record.habit.form.view</field>
             <field name="model">medical.record.habit</field>
@@ -57,9 +70,9 @@
                             <h1>
                                 <field name="name" />
                             </h1>
-                            <label for="record_id" string="For" />
                             <h3>
-                                <field name="record_id" />
+                                <label for="record_id" string="For " />
+                                <field name="record_id" readonly="1" />
                             </h3>
                         </div>
                         <group>
@@ -75,6 +88,7 @@
                 </form>
             </field>
         </record>
+        
         <!-- medical.record VIEWS -->
         <record id="medical_record_kanban_view" model="ir.ui.view">
             <field name="name">medical.record.kanban.view</field>
@@ -160,7 +174,7 @@
                             </page>
                             <page name="habits" string="Habits">
                                 <field name="habit_ids" nolabel="1">
-                                    <tree name="habits_tree">
+                                    <tree name="habits_tree" editable="top">
                                         <field name="name" />
                                         <field name="description" />
                                         <field name="type" />
