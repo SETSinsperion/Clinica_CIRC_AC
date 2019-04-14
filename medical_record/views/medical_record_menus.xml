@@ -30,7 +30,7 @@
             parent="menu_patient_information"
             sequence="6" />
 
-        <!-- <menuitem id="menu_logs"
+        <menuitem id="menu_logs"
             name="Medical Logs"
             action="medical_record.action_open_medical_record_log_views"
             parent="menu_patient_information"
@@ -42,7 +42,7 @@
             parent="menu_patient_information"
             sequence="8" />
 
-        <menuitem id="menu_ses"
+        <!-- <menuitem id="menu_ses"
             name="Social Economic Studies"
             action="medical_record.action_open_medical_record_ses_views"
             parent="menu_patient_information"

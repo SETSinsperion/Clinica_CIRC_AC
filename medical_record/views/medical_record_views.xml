@@ -2,6 +2,87 @@
 <odoo>
     <data>
         <!-- medical.record.background VIEWS -->
+        <record id="medical_record_log_type_tree_view" model="ir.ui.view">
+            <field name="name">medical.record.log.tree.view</field>
+            <field name="model">medical.record.log</field>
+            <field name="arch" type="xml">
+                <tree name="medical_record_log_type_tree">
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+        <record id="medical_record_log_type_form_view" model="ir.ui.view">
+            <field name="name">medical.record.log.form.view</field>
+            <field name="model">medical.record.log</field>
+            <field name="arch" type="xml">
+                <form name="medical_record_log_type_form">
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="o_title">
+                            <label for="name" />
+                            <h4>
+                                <field name="name" />
+                            </h4>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- medical.record.background VIEWS -->
+        <record id="medical_record_log_tree_view" model="ir.ui.view">
+            <field name="name">medical.record.log.tree.view</field>
+            <field name="model">medical.record.log</field>
+            <field name="arch" type="xml">
+                <tree name="medical_record_log_tree">
+                    <field name="name" />
+                    <field name="start_datetime" />
+                    <field name="end_datetime" />
+                </tree>
+            </field>
+        </record>
+        <record id="medical_record_log_form_view" model="ir.ui.view">
+            <field name="name">medical.record.log.form.view</field>
+            <field name="model">medical.record.log</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="o_title">
+                            <label for="name" class="oe_edit_only" />
+                            <h1>
+                                <field name="name" />
+                            </h1>
+                            <label for="log_type_id" class="oe_edit_only" />
+                            <h3>
+                                <field name="log_type_id" />
+                            </h3>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="medical_employee" />
+                            </group>
+                            <group>
+                                <field name="start_datetime" />
+                                <field name="end_datetime" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="details_page" string="Details">
+                                <group>
+                                    <field name="place_id" />
+                                    <field name="details" nolabel="1" />
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- medical.record.background VIEWS -->
         <record id="medical_record_background_tree_view" model="ir.ui.view">
             <field name="name">medical.record.background.tree.view</field>
             <field name="model">medical.record.background</field>

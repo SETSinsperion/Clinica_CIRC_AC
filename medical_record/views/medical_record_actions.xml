@@ -21,5 +21,17 @@
             res_model="medical.record.habit"
             view_mode="tree,form"
             view_type="form" />
+
+        <act_window id="action_open_medical_record_log_views"
+            name="Medical Logs"
+            res_model="medical.record.log"
+            view_mode="tree,form"
+            view_type="form" />
+
+        <act_window id="action_open_medical_record_log_type_views"
+            name="Log Types"
+            res_model="medical.record.log.type"
+            view_mode="tree,form"
+            view_type="form" />
     </data>
 </odoo>
