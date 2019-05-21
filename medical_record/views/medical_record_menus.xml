@@ -47,12 +47,13 @@
             action="medical_record.action_open_medical_record_ses_views"
             parent="menu_patient_information"
             sequence="9" />
-
+        -->
+        
         <menuitem id="menu_medical_places"
             name="Medical Places"
             action="medical_record.action_open_medical_record_place_views"
             parent="menu_patient_information"
-            sequence="10" /> -->
+            sequence="10" />
 
         <menuitem id="menu_medical_record_config"
             name="Configuration"
