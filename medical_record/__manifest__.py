@@ -26,7 +26,7 @@
     'name' : 'Medical Records',
     'author': 'INSPERION',
     'version' : '1.0',
-    'summary': 'Medical Records for CIRC A.C Clinic',
+    'summary': 'Medical Records for Medical Centers.',
     'sequence': 100,
     'description': """
 INSPERION | Medical Records
@@ -46,6 +46,7 @@ Medical Records for Medical Centers
         'hr'
     ],
     'data': [
+        # 'data/medical_record_data.xml'
         'security/medical_record_security.xml',
         'security/ir.model.access.csv',
         'views/web_assets.xml',

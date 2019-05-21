@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        
+    <data noupdate="1">
+        <record id="medical_record_number" model="ir.sequence">
+            <field name="name">Medical Record Number</field>
+            <field name="code">medical.record.number</field>
+            <field name="prefix">MR-</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
     </data>
 </odoo>
