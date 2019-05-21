@@ -57,6 +57,7 @@
 
         <menuitem id="menu_medical_record_config"
             name="Configuration"
+            action="medical_record.action_medical_record_config_settings"
             parent="medical_record_menu_root"
             sequence="4" />
     </data>

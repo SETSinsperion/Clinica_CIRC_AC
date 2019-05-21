@@ -84,7 +84,3 @@ class MedicalRecord(models.Model):
         string="Backgrounds",
         help="Background about the patient."
     )
-    require_ses = fields.Boolean(
-        string="Is SES neccesary?",
-        help="SES = Social-Economic Study of patient."
-    )

@@ -298,9 +298,6 @@
                                     <field name="partner_phone" readonly="1" attrs="{'invisible': [('partner_phone', '=', False)]}" />
                                     <field name="partner_mobile" readonly="1" attrs="{'invisible': [('partner_mobile', '=', False)]}" />
                                 </group>
-                                <group name="ses_zone">
-                                    <field name="require_ses"  />
-                                </group>
                             </group>
                         </div>
                         <notebook>
@@ -344,6 +341,50 @@
                         <field name="message_ids" widget="mail_thread"/>
                     </div>
                 </form>
+            </field>
+        </record>
+
+        <!-- res.config.settings VIEWS -->
+        <record id="inherited_res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">inherited.res.config.settings.view.form</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="base.res_config_settings_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('settings')]" position="inside" >
+                    <div class="app_settings_block" data-string="Medical Records" string="Medical Records" data-key="medical_record">
+                        <h2>Records</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-12 col-lg-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="auto_numbering" />
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="auto_numbering"/>
+                                    <div class="text-muted">
+                                        Records will have auto-numbering (see <i>medical_record_number</i> sequence).
+                                    </div>
+                                    <!-- <div class="content-group">
+                                        <div id="stock_delivery_ups"/>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <h2>Social-Economic Studies</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-12 col-lg-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="require_ses" />
+                                </div>
+                                <div class="o_setting_right_pane" id="barcode_settings">
+                                    <label for="require_ses"/>
+                                    <div class="text-muted">
+                                        Social-Economic Studies required for your Records, otherwise won't be at them.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </xpath>
             </field>
         </record>
     </data>

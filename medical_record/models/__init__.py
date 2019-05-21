@@ -23,6 +23,7 @@
 # 
 ##########################################################################
 
+from . import res_config_settings
 from . import medical_record_background
 from . import medical_record_habit
 from . import medical_record_place
