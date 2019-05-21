@@ -1,10 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <!-- medical.record.background VIEWS -->
+        <!-- medical.record.place VIEWS -->
+        <record id="medical_record_place_tree_view" model="ir.ui.view">
+            <field name="name">medical.record.place.tree.view</field>
+            <field name="model">medical.record.place</field>
+            <field name="arch" type="xml">
+                <tree name="medical_record_place_tree">
+                    <field name="name" />
+                    <field name="city" />
+                    <field name="state_id" />
+                    <field name="country_id" />
+                </tree>
+            </field>
+        </record>
+        <record id="medical_record_place_form_view" model="ir.ui.view">
+            <field name="name">medical.record.place.form.view</field>
+            <field name="model">medical.record.place</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="o_title">
+                            <label for="name" class="oe_edit_only" />
+                            <h1>
+                                <field name="name" />
+                            </h1>
+                        </div>
+                        <group>
+                            <group name="location" string="Location">
+                                <field name="city" />
+                                <field name="state_id" />
+                                <field name="country_id" />
+                            </group>
+                            <group name="address" string="Address">
+                                <field name="street" />
+                                <field name="street2" />
+                                <field name="ext_number" />
+                                <field name="int_number" />
+                            </group>
+                            <group name="contact" string="Contact">
+                                <field name="phone" />
+                                <field name="email" />
+                                <field name="website" />
+                                <field name="social_mediums_info" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- medical.record.log.type VIEWS -->
         <record id="medical_record_log_type_tree_view" model="ir.ui.view">
-            <field name="name">medical.record.log.tree.view</field>
-            <field name="model">medical.record.log</field>
+            <field name="name">medical.record.log.type.tree.view</field>
+            <field name="model">medical.record.log.type</field>
             <field name="arch" type="xml">
                 <tree name="medical_record_log_type_tree">
                     <field name="name" />
@@ -12,8 +63,8 @@
             </field>
         </record>
         <record id="medical_record_log_type_form_view" model="ir.ui.view">
-            <field name="name">medical.record.log.form.view</field>
-            <field name="model">medical.record.log</field>
+            <field name="name">medical.record.log.type.form.view</field>
+            <field name="model">medical.record.log.type</field>
             <field name="arch" type="xml">
                 <form name="medical_record_log_type_form">
                     <header>
@@ -30,7 +81,7 @@
             </field>
         </record>
 
-        <!-- medical.record.background VIEWS -->
+        <!-- medical.record.log VIEWS -->
         <record id="medical_record_log_tree_view" model="ir.ui.view">
             <field name="name">medical.record.log.tree.view</field>
             <field name="model">medical.record.log</field>
@@ -62,6 +113,7 @@
                         </div>
                         <group>
                             <group>
+                                <field name="place_id" />
                                 <field name="medical_employee" />
                             </group>
                             <group>
@@ -72,7 +124,6 @@
                         <notebook>
                             <page name="details_page" string="Details">
                                 <group>
-                                    <field name="place_id" />
                                     <field name="details" nolabel="1" />
                                 </group>
                             </page>
@@ -247,6 +298,9 @@
                                     <field name="partner_phone" readonly="1" attrs="{'invisible': [('partner_phone', '=', False)]}" />
                                     <field name="partner_mobile" readonly="1" attrs="{'invisible': [('partner_mobile', '=', False)]}" />
                                 </group>
+                                <group name="ses_zone">
+                                    <field name="require_ses"  />
+                                </group>
                             </group>
                         </div>
                         <notebook>
@@ -255,27 +309,27 @@
                             </page>
                             <page name="habits" string="Habits">
                                 <field name="habit_ids" nolabel="1">
-                                    <tree name="habits_tree" editable="top">
+                                    <tree name="habits_tree_inside_medical_record_form" editable="top">
+                                        <field name="type" />
                                         <field name="name" />
                                         <field name="description" />
-                                        <field name="type" />
                                     </tree>
                                 </field>
                             </page>
                             <page name="backgrounds" string="Backgrounds">
                                 <field name="background_ids" nolabel="1" >
-                                    <tree name="background_tree" editable="top">
+                                    <tree name="background_tree_inside_medical_record_form" editable="top">
+                                        <field name="type" />
                                         <field name="summary" />
                                         <field name="description" />
-                                        <field name="type" />
                                     </tree>
                                 </field>
                             </page> 
                              <page name="logs" string="Logs">
                                 <field name="log_ids" nolabel="1">
-                                    <tree name="logs_tree">
+                                    <tree name="logs_tree_inside_medical_record_form">
                                         <field name="name" />
-                                        <field name="details" />
+                                        <field name="place_id" />
                                         <field name="start_datetime" />
                                         <field name="end_datetime" />
                                         <field name="medical_employee" />

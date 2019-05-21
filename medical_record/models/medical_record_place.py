@@ -64,3 +64,19 @@ class MedicalRecordPlace(models.Model):
         string='Country',
         ondelete='restrict'
     )
+    phone = fields.Char(
+        string="Phone",
+        help="Phone Number of the place."
+    )
+    email = fields.Char(
+        string="Email",
+        help="General email for contact of the place."
+    )
+    website = fields.Char(
+        string="Website",
+        help="Website of the place."
+    )
+    social_mediums_info = fields.Text (
+        string="Social Media",
+        help="social Media information for contact (if any)."
+    )

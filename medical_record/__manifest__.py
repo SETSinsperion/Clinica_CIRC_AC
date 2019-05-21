@@ -32,7 +32,7 @@
 INSPERION | Medical Records
 ===========================
 
-Medical Records for CIRC A.C Clinic
+Medical Records for Medical Centers
 -----------------------------------
 
     """,
@@ -41,9 +41,9 @@ Medical Records for CIRC A.C Clinic
     'depends' : [
         'base',
         'web',
+        'mail',
         'contacts',
-        'hr',
-        'mail'
+        'hr'
     ],
     'data': [
         'security/medical_record_security.xml',

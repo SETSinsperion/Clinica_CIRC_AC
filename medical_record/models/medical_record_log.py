@@ -35,7 +35,7 @@ class MedicalRecordLog(models.Model):
         help="Brief description about the entry in the history.",
         required=True
     )
-    details = fields.Char(
+    details = fields.Text(
         string="Details",
         help="Details about the entry in the history."
     )
