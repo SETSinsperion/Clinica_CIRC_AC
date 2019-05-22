@@ -52,7 +52,8 @@ Medical Records for Medical Centers
         'views/web_assets.xml',
         'views/medical_record_views.xml',
         'views/medical_record_actions.xml',
-        'views/medical_record_menus.xml'
+        'views/medical_record_menus.xml',
+        'report/report_record.xml'
     ],
     'demo': [
         'data/medical_record_data.xml',

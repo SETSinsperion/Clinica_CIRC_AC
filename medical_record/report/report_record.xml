@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_medical_record_document">
+            <t t-call="web.external_layout">
+                <t t-set="o" t-value="o.with_context({'lang': lang})"/>
+                <div class="page">
+                    <div name="gral_data" class="row">
+                        <div class="col-2">
+                            <img t-if="o.profile_image" t-att-src="image_data_uri(o.profile_image)" class="img-fluid" />
+                        </div>
+                        <div class="col-10">
+
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="report_medical_record">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-set="lang" t-value="user.lang"/>
+                    <t t-call="medical_record.report_medical_record_document" t-lang="lang"/>
+                </t>
+            </t>
+        </template>
+
+        <report id="action_report_medical_record"
+            string="Record"            
+            model="medical.record"
+            report_type="qweb-pdf"
+            name="medical_record.report_medical_record"
+            file="medical_record.report_medical_record"
+            print_report_name="'Record %s' % (object.name)" />
+    </data>
+</odoo>
