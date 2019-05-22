@@ -8,6 +8,10 @@
             <field name="sequence">7</field>
         </record>
         <!-- GROUPS -->
+        <record id="group_ses" model="res.groups">
+            <field name="name">Social-Economic Studies</field>
+            <field name="comment">Allow SES to be in Medical Records.</field>
+        </record>
         <record id="group_medical_record_user" model="res.groups">
             <field name="name">User</field>
             <field name="category_id" ref="medical_record.module_category_medical_record" />

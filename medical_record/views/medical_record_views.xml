@@ -333,7 +333,8 @@
                                        placeholder="Patient name" />
                             </h1>
                             <h2 style="width: 75%;">
-                                <field name="name" placeholder="Record Number" />
+                                <field name="auto_numbering" invisible="1" />
+                                <field name="name" placeholder="Record Number" attrs="{'readonly': [('auto_numbering', '=', True)]}" />
                             </h2>
                         </div>
                         <div name="zone_gral_info">
@@ -378,8 +379,8 @@
                                     </tree>
                                 </field>
                             </page>
-                            <page name="ses" string="SES" attrs="{'invisible': [('require_ses', '=', False)]}">
-                                <field name="require_ses" invisible="1" />
+                            <page name="ses" string="SES" attrs="{'invisible': [('group_ses', '=', False)]}">
+                                <field name="group_ses" invisible="1" />
                                 <field name="ses_ids" nolabel="1">
                                     <tree name="ses_tree_inside_medical_record_form">
                                         <field name="relative" />
@@ -430,10 +431,10 @@
                         <div class="row mt16 o_settings_container">
                             <div class="col-12 col-lg-6 o_setting_box">
                                 <div class="o_setting_left_pane">
-                                    <field name="require_ses" />
+                                    <field name="group_group_ses" />
                                 </div>
                                 <div class="o_setting_right_pane" id="barcode_settings">
-                                    <label for="require_ses"/>
+                                    <label for="group_group_ses"/>
                                     <div class="text-muted">
                                         Social-Economic Studies required for your Records, otherwise won't be at them.
                                     </div>

@@ -42,12 +42,12 @@
             parent="menu_patient_information"
             sequence="8" />
 
-        <!-- <menuitem id="menu_ses"
+        <menuitem id="menu_ses"
             name="Social Economic Studies"
             action="medical_record.action_open_medical_record_ses_views"
             parent="menu_patient_information"
-            sequence="9" />
-        -->
+            sequence="9"
+            groups="medical_record.group_ses" />
         
         <menuitem id="menu_medical_places"
             name="Medical Places"
@@ -59,6 +59,7 @@
             name="Configuration"
             action="medical_record.action_medical_record_config_settings"
             parent="medical_record_menu_root"
-            sequence="4" />
+            sequence="4"
+            groups="medical_record.group_medical_record_manager" />
     </data>
 </odoo>

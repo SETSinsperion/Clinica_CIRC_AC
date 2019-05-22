@@ -46,7 +46,7 @@ Medical Records for Medical Centers
         'hr'
     ],
     'data': [
-        # 'data/medical_record_data.xml'
+        'data/medical_record_data.xml',
         'security/medical_record_security.xml',
         'security/ir.model.access.csv',
         'views/web_assets.xml',
