@@ -35,9 +35,9 @@ class ResConfigSettings(models.TransientModel):
         aux_auto_numbering = literal_eval(get_param(
             'medical_record.auto_numbering', default='False'))
         if not aux_require_ses:
-            aux_auto_numbering = False
+            aux_require_ses = False
         if not aux_auto_numbering:
-            aux_auto_numbering = False        
+            aux_auto_numbering = False
         # the value of the parameter is a nonempty string
         res.update(
             require_ses=aux_require_ses,

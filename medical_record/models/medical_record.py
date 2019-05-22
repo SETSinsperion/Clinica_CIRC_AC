@@ -23,6 +23,8 @@
 # 
 ##########################################################################
 
+from ast import literal_eval
+
 from odoo import api, fields, models, _
 
 
@@ -84,3 +86,21 @@ class MedicalRecord(models.Model):
         string="Backgrounds",
         help="Background about the patient."
     )
+    ses_ids = fields.One2many(
+        comodel_name="medical.record.ses",
+        inverse_name="record_id",
+        string="SES",
+        help="Social-Economic Studies about the patient."
+    )
+    require_ses = fields.Boolean(
+        compute="_compute_require_ses"
+    )
+
+    @api.model
+    def _compute_require_ses(self):
+        get_param =  self.env['ir.config_parameter'].sudo().get_param
+        aux_require_ses = literal_eval(get_param(
+            'medical_record.require_ses', default='False'))
+        if not aux_require_ses:
+            aux_require_ses = False
+        self.require_ses = aux_require_ses

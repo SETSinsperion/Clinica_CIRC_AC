@@ -38,23 +38,53 @@ class MedicalRecordSocioEconomicStudy(models.Model):
     job = fields.Char(
         string = 'Occupation',
         help = 'Jobs.',
+        required=True
     )
     salary = fields.Float(
         string = 'Salary',
         help = 'Amount earned per month.',
+        required=True
     )
-    studies = fields.Char(
+    studies = fields.Selection(
+        selection=[
+            ('na', 'No studies'),
+            ('elementary', 'Elementary'),
+            ('secondary', 'Secondary'),
+            ('high', 'High School'),
+            ('bachelor', 'Bachelor\'s degree'),
+            ('postgraduate', 'Postgraduate')
+        ],
         string = 'Studies',
-        help = 'Academic history.'
+        help = 'Academic history.',
+        required=True
     )
     marital_status = fields.Selection(
-        [('sin', 'Single'), ('mar', 'Married'), ('wid', 'Widowed'), ('div', 'Divorced')],
+        selection=[('sin', 'Single'), ('mar', 'Married'), ('wid', 'Widowed'), ('div', 'Divorced')],
         string='Marital Status',
         help='Marital Status.',
         required=True
     )
-    number_people = fields.Integer(
-        string = 'Number of people living at home.',
-        help = 'Number of people living at home.'
+    another_details = fields.Char(
+        string = 'Another Details',
+        help = 'For the relative any detail that does not take in count above-data.'
     )
+    record_id = fields.Many2one(
+        comodel_name="medical.record",
+        string="Medical Record",
+        help="Medical record.",
+        required=True
+    )
+    currency_id = fields.Many2one(
+        comodel_name='res.currency', 
+        compute='_compute_currency_id'
+    )
+
+    @api.multi
+    def _compute_currency_id(self):
+        try:
+            main_company = self.sudo().env.ref('base.main_company')
+        except ValueError:
+            main_company = self.env['res.company'].sudo().search([], limit=1, order="id")
+        for ses in self:
+            ses.currency_id = self.env.user.company_id.sudo().currency_id.id or main_company.currency_id.id
      

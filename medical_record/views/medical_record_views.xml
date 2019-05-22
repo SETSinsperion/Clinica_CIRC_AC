@@ -221,6 +221,51 @@
             </field>
         </record>
         
+        <!-- medical.record.ses VIEWS -->
+        <record id="medical_record_ses_tree_view" model="ir.ui.view">
+            <field name="name">medical.record.ses.tree.view</field>
+            <field name="model">medical.record.ses</field>
+            <field name="arch" type="xml">
+                <tree name="medical_record_ses_tree">
+                    <field name="relative" />
+                    <field name="job" />
+                    <field name="marital_status" />
+                    <field name="currency_id" invisible="1" />
+                    <field name="salary" widget='monetary' options="{'currency_field': 'currency_id', 'field_digits': True}" />
+                </tree>
+            </field>
+        </record>
+        <record id="medical_record_ses_form_view" model="ir.ui.view">
+            <field name="name">medical.record.ses.form.view</field>
+            <field name="model">medical.record.ses</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="o_title">
+                            <label for="relative" class="oe_edit_only" />
+                            <h1>
+                                <field name="relative" />
+                            </h1>
+                        </div>
+                        <group>
+                            <group name="incomes" string="Incomes">
+                                <field name="job" />
+                                <field name="studies" />
+                                <field name="currency_id" invisible="1" />
+                                <field name="salary" widget='monetary' options="{'currency_field': 'currency_id', 'field_digits': True}" />
+                            </group>
+                            <group name="personal_data" string="Personal Info.">
+                                <field name="marital_status" />
+                                <field name="another_details" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
         <!-- medical.record VIEWS -->
         <record id="medical_record_kanban_view" model="ir.ui.view">
             <field name="name">medical.record.kanban.view</field>
@@ -322,7 +367,7 @@
                                     </tree>
                                 </field>
                             </page> 
-                             <page name="logs" string="Logs">
+                            <page name="logs" string="Logs">
                                 <field name="log_ids" nolabel="1">
                                     <tree name="logs_tree_inside_medical_record_form">
                                         <field name="name" />
@@ -330,6 +375,18 @@
                                         <field name="start_datetime" />
                                         <field name="end_datetime" />
                                         <field name="medical_employee" />
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="ses" string="SES" attrs="{'invisible': [('require_ses', '=', False)]}">
+                                <field name="require_ses" invisible="1" />
+                                <field name="ses_ids" nolabel="1">
+                                    <tree name="ses_tree_inside_medical_record_form">
+                                        <field name="relative" />
+                                        <field name="job" />
+                                        <field name="marital_status" />
+                                        <field name="currency_id" invisible="1" />
+                                        <field name="salary" widget='monetary' options="{'currency_field': 'currency_id', 'field_digits': True}" sum="Total Incomes" />
                                     </tree>
                                 </field>
                             </page>
