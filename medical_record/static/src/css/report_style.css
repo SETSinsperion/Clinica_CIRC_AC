@@ -1,0 +1,48 @@
+/* Record report */
+
+span, th, p, h3 {
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+
+.row-section {
+    margin-bottom: 20px;
+}
+
+.border-gray {
+    border: 2px solid lightgray;
+    padding: 4px 10px;
+}
+
+.header-cell {
+    padding-bottom: 2px;
+}
+
+.label-field-header {
+    font-size: 12px;
+    display: block;
+}
+
+.field-header {
+    font-size: 14px;
+}
+
+.background-table,
+.background-table td,
+.background-table th {
+    border: 1px solid lightgray;
+}
+
+.background-table > thead > tr > th {
+    font-size: 10px;
+    text-align: center;
+}
+
+.background-table > tbody > tr > td {
+    font-size: 12px;
+}
+
+.background-table > thead > tr > th,
+.background-table > tbody > tr > td {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}

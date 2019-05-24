@@ -55,6 +55,13 @@ class MedicalRecordBackground(models.Model):
         required=True
     )
 
+    @api.model
+    def getFormattedDescription(self):
+        return self.description.replace("\n", "<br/>")
+
+    @api.model
+    def getType(self):
+        return dict(self._fields['type'].selection)[self.type]
 
     # # Atomics
     # Integer
