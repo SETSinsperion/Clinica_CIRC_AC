@@ -51,4 +51,12 @@ class MedicalRecordHabit(models.Model):
         help="Medical record.",
         required=True
     )
+
+    @api.model
+    def getFormattedTextField(self, textField):
+        return textField.replace("\n", "<br/>")
+
+    @api.model
+    def getSelectionValue(self, selection_name, selection_key):
+        return dict(self._fields[selection_name].selection)[selection_key]
     

@@ -1,6 +1,6 @@
 /* Record report */
 
-span, th, p, h3 {
+span, th, td, p, h1, h2, h3, h4, h5, h6 {
     font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
 }
 
@@ -26,23 +26,23 @@ span, th, p, h3 {
     font-size: 14px;
 }
 
-.background-table,
-.background-table td,
-.background-table th {
+.backgrounds-table, .habits-table, .logs-table,
+.backgrounds-table td, .habits-table td, .logs-table td
+.backgrounds-table th, .habits-table th, .logs-table th {
     border: 1px solid lightgray;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
 }
 
-.background-table > thead > tr > th {
+.backgrounds-table > thead > tr > th,
+.habits-table > thead > tr > th,
+.logs-table > thead > tr > th {
     font-size: 10px;
     text-align: center;
 }
 
-.background-table > tbody > tr > td {
-    font-size: 12px;
-}
-
-.background-table > thead > tr > th,
-.background-table > tbody > tr > td {
-    padding-top: 5px !important;
-    padding-bottom: 5px !important;
+.backgrounds-table > tbody > tr > td,
+.habits-table > tbody > tr > td,
+.logs-table > tbody > tr > td {
+    font-size: 10px;
 }

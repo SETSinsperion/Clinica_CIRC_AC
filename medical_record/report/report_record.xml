@@ -42,33 +42,121 @@
                             </div>
                         </div>
                     </div>
-                    <div name="diagnosis_data" class="row row-section">
-                        
-                    </div>
-                    <div name="backgroud_data" class="row row-section" t-if="o.background_ids">
-                        <h3>Backgrounds</h3>
-                        <br/>
-                        <t t-set="back_counter" t-value="1" />
-                        <table name="backgrounds" class="table background-table">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Summary</th>
-                                    <th scope="col">Type</th>
-                                    <th scope="col">Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr t-foreach="o.background_ids" t-as="background">
-                                    <th scope="row"><t t-esc="back_counter" /></th>
-                                    <td><span t-esc="background.summary" /></td>
-                                    <td><span t-raw="background.getType()" /></td>
-                                    <td><p t-raw="background.getFormattedDescription()" /></td>
-                                    <t t-set="back_counter" t-value="back_counter + 1" />
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <section name="diagnosis_section">
+                        <div name="diagnosis_title" class="row text-center">
+                            <h5>Diagnosis</h5>
+                        </div>
+                        <div name="diagnosis_data" class="row row-section" t-if="o.background_ids">
+                            <h6><t t-esc="o.diagnosis" /></h6>
+                        </div>
+                    </section>
+                    <section name="backgrounds_section">
+                        <div name="backgrounds_title" class="row">
+                            <h5>Backgrounds</h5>
+                        </div>
+                        <div name="backgrounds_data" class="row row-section" t-if="o.background_ids">
+                            <t t-set="back_counter" t-value="1" />
+                            <table name="backgrounds" class="table backgrounds-table">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Summary</th>
+                                        <th scope="col">Type</th>
+                                        <th scope="col">Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="o.background_ids" t-as="background">
+                                        <th scope="row"><t t-esc="back_counter" /></th>
+                                        <td><span t-esc="background.summary" /></td>
+                                        <td><span t-raw="background.getSelectionValue('type', background.type)" /></td>
+                                        <td><p t-raw="background.getFormattedTextField(background.description)" /></td>
+                                        <t t-set="back_counter" t-value="back_counter + 1" />
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section name="habits_section">
+                        <div name="habits_title" class="row">
+                            <h5>Habits</h5>
+                        </div>
+                        <div name="habits_data" class="row row-section" t-if="o.habit_ids">
+                            <t t-set="habit_counter" t-value="1" />
+                            <table name="habits" class="table habits-table">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Habit</th>
+                                        <th scope="col">Type</th>
+                                        <th scope="col">Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="o.habit_ids" t-as="habit">
+                                        <th scope="row"><t t-esc="habit_counter" /></th>
+                                        <td><span t-esc="habit.name" /></td>
+                                        <td><span t-raw="habit.getSelectionValue('type', habit.type)" /></td>
+                                        <td><p t-raw="habit.getFormattedTextField(habit.description)" /></td>
+                                        <t t-set="habit_counter" t-value="habit_counter + 1" />
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section name="logs_section">
+                        <div name="logs_title" class="row">
+                            <h5>Logs</h5>
+                        </div>
+                        <div name="logs_data" class="row row-section" t-if="o.log_ids">
+                            <t t-set="log_counter" t-value="1" />
+                            <table name="logs" class="table logs-table">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Summary</th>
+                                        <th scope="col">Place</th>
+                                        <th scope="col">Start of the stay</th>
+                                        <th scope="col">End of the stay</th>
+                                        <th scope="col">Medical Employee</th>
+                                        <th scope="col">Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="o.log_ids" t-as="log">
+                                        <th scope="row"><t t-esc="log_counter" /></th>
+                                        <td><span t-esc="'%s (%s)' % (log.name, log.log_type_id.name)" /></td>
+                                        <td><span t-esc="log.place_id.name" /></td>
+                                        <td><span t-esc="log.start_datetime" /></td>
+                                        <td><span t-esc="log.end_datetime" /></td>
+                                        <td><span t-esc="log.medical_employee" /></td>
+                                        <td><span t-esc="log.details" /></td>
+                                        <t t-set="log_counter" t-value="log_counter + 1" />
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section name="user_section">
+                        <div name="logs_data" class="row">
+                            <div class="row">
+                                <div class="col-6 text-center">
+                                    <b>Printed by:</b>
+                                </div>
+                                <div class="col-6 text-center">
+                                    <b>Datetime:</b>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 text-center">
+                                    <span t-esc="user.name" />
+                                </div>
+                                <div class="col-6 text-center">
+                                    <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/>  
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </t>
         </template>

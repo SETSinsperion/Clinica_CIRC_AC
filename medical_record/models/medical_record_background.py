@@ -55,13 +55,14 @@ class MedicalRecordBackground(models.Model):
         required=True
     )
 
+    # TODO: Class to inherit these methods
     @api.model
-    def getFormattedDescription(self):
-        return self.description.replace("\n", "<br/>")
+    def getFormattedTextField(self, textField):
+        return textField.replace("\n", "<br/>")
 
     @api.model
-    def getType(self):
-        return dict(self._fields['type'].selection)[self.type]
+    def getSelectionValue(self, selection_name, selection_key):
+        return dict(self._fields[selection_name].selection)[selection_key]
 
     # # Atomics
     # Integer
