@@ -26,10 +26,15 @@ span, th, td, p, h1, h2, h3, h4, h5, h6 {
     font-size: 14px;
 }
 
+table th {
+    background-color: #0077ff !important;
+    color: #FFF !important;
+}
+
 .backgrounds-table, .habits-table, .logs-table,
-.backgrounds-table td, .habits-table td, .logs-table td
+.backgrounds-table td, .habits-table td, .logs-table td,
 .backgrounds-table th, .habits-table th, .logs-table th {
-    border: 1px solid lightgray;
+    border: 1px solid lightgray !important;
     padding-top: 3px !important;
     padding-bottom: 3px !important;
 }

@@ -21,17 +21,17 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-6 header-cell">
+                                <div class="col-6 header-cell" t-if="o.partner_phone">
                                     <span class="label-field-header"><b>Phone</b></span>
                                     <span class="field-header" t-esc="o.partner_phone" />
                                 </div>
-                                <div class="col-6 header-cell">
+                                <div class="col-6 header-cell" t-if="o.partner_email">
                                     <span class="label-field-header"><b>Email</b></span>
                                     <span class="field-header" t-esc="o.partner_email" />
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-6 header-cell">
+                                <div class="col-6 header-cell" t-if="o.partner_mobile">
                                     <span class="label-field-header"><b>Mobile</b></span>
                                     <span class="field-header" t-esc="o.partner_mobile" />
                                 </div>
@@ -57,7 +57,7 @@
                         <div name="backgrounds_data" class="row row-section" t-if="o.background_ids">
                             <t t-set="back_counter" t-value="1" />
                             <table name="backgrounds" class="table backgrounds-table">
-                                <thead class="thead-dark">
+                                <thead>
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Summary</th>
@@ -67,7 +67,7 @@
                                 </thead>
                                 <tbody>
                                     <tr t-foreach="o.background_ids" t-as="background">
-                                        <th scope="row"><t t-esc="back_counter" /></th>
+                                        <td scope="row"><b t-esc="back_counter" /></td>
                                         <td><span t-esc="background.summary" /></td>
                                         <td><span t-raw="background.getSelectionValue('type', background.type)" /></td>
                                         <td><p t-raw="background.getFormattedTextField(background.description)" /></td>
@@ -94,7 +94,7 @@
                                 </thead>
                                 <tbody>
                                     <tr t-foreach="o.habit_ids" t-as="habit">
-                                        <th scope="row"><t t-esc="habit_counter" /></th>
+                                        <td scope="row"><b t-esc="habit_counter" /></td>
                                         <td><span t-esc="habit.name" /></td>
                                         <td><span t-raw="habit.getSelectionValue('type', habit.type)" /></td>
                                         <td><p t-raw="habit.getFormattedTextField(habit.description)" /></td>
@@ -124,7 +124,7 @@
                                 </thead>
                                 <tbody>
                                     <tr t-foreach="o.log_ids" t-as="log">
-                                        <th scope="row"><t t-esc="log_counter" /></th>
+                                        <td scope="row"><b t-esc="log_counter" /></td>
                                         <td><span t-esc="'%s (%s)' % (log.name, log.log_type_id.name)" /></td>
                                         <td><span t-esc="log.place_id.name" /></td>
                                         <td><span t-esc="log.start_datetime" /></td>
@@ -138,22 +138,21 @@
                         </div>
                     </section>
                     <section name="user_section">
-                        <div name="logs_data" class="row">
-                            <div class="row">
-                                <div class="col-6 text-center">
-                                    <b>Printed by:</b>
-                                </div>
-                                <div class="col-6 text-center">
-                                    <b>Datetime:</b>
-                                </div>
+                        <hr style="width: 100%;margin-bottom: 10px;border-color: darkgray;" />
+                        <div class="row">
+                            <div class="col-6 text-center">
+                                <span><b>Printed by:</b></span>
                             </div>
-                            <div class="row">
-                                <div class="col-6 text-center">
-                                    <span t-esc="user.name" />
-                                </div>
-                                <div class="col-6 text-center">
-                                    <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/>  
-                                </div>
+                            <div class="col-6 text-center">
+                                <span><b>Datetime:</b></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 text-center">
+                                <span t-esc="user.name" />
+                            </div>
+                            <div class="col-6 text-center">
+                                <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M:%S')"/>  
                             </div>
                         </div>
                     </section>
@@ -176,6 +175,6 @@
             report_type="qweb-pdf"
             name="medical_record.report_medical_record"
             file="medical_record.report_medical_record"
-            print_report_name="'Record %s' % (object.name)" />
+            print_report_name="'Record %s' % (object.name or object.partner_id.name)" />
     </data>
 </odoo>
