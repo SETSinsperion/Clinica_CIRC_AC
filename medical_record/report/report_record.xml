@@ -37,9 +37,9 @@
                                 </div>
                                 <div class="col-6 header-cell" t-if="o.partner_id.age > 0">
                                     <t t-set="years_age" t-value="'%s' % ('%s' % o.partner_id.age).split('.')[0]" />
-                                    <t t-set="months_age" t-value="'%s' % ('%s' % o.partner_id.age).split('.')[1]" />
+                                    <t t-set="months_age" t-value="'%s' % int(('%s' % o.partner_id.age).split('.')[1])" />
                                     <span class="label-field-header"><b>Age</b></span>
-                                    <span class="field-header" t-esc="'%s year(s) %s month(s)' % (years_age, months_age)" />
+                                    <span class="field-header" t-esc="'%s%s' % ('%s year(s) ' % years_age if int(years_age) > 0 else '', '%s month(s)' % months_age if int(months_age) > 0 else '')" />
                                 </div>
                             </div>
                         </div>
