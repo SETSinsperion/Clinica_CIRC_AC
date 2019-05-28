@@ -17,7 +17,7 @@
                                 </div>
                                 <div class="col-6 header-cell">
                                     <span class="label-field-header"><b>Address</b></span>
-
+                                    <span class="field-header" t-esc="o.partner_id.getAddress()" />
                                 </div>
                             </div>
                             <div class="row">
