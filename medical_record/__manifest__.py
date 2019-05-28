@@ -51,6 +51,7 @@ Medical Records for Medical Centers
         'security/ir.model.access.csv',
         'views/web_assets.xml',
         'views/medical_record_views.xml',
+        'views/inherited_base_views.xml',
         'views/medical_record_actions.xml',
         'views/medical_record_menus.xml',
         'report/report_record.xml'
