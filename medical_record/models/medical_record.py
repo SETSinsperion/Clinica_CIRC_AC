@@ -69,6 +69,12 @@ class MedicalRecord(models.Model):
     partner_mobile = fields.Char(
         related="partner_id.mobile"
     )
+    partner_initial_name = fields.Char(
+        string="Initial",
+        help="Partner's name initial, example Tony = T.",
+        compute="_compute_partner_initial_name",
+        store=True
+    )
     profile_image = fields.Binary(
         string="Patient photo",
         help="Patient photo.",
@@ -129,3 +135,8 @@ class MedicalRecord(models.Model):
         if not aux_auto_numbering:
             aux_auto_numbering = False
         self.auto_numbering = aux_auto_numbering
+
+    @api.depends('partner_id.name')
+    def _compute_partner_initial_name(self):
+        for record in self:
+            record.partner_initial_name = record.partner_id.name[0]
