@@ -221,6 +221,51 @@
             </field>
         </record>
         
+        <!-- medical.record.ses VIEWS -->
+        <record id="medical_record_ses_tree_view" model="ir.ui.view">
+            <field name="name">medical.record.ses.tree.view</field>
+            <field name="model">medical.record.ses</field>
+            <field name="arch" type="xml">
+                <tree name="medical_record_ses_tree">
+                    <field name="relative" />
+                    <field name="job" />
+                    <field name="marital_status" />
+                    <field name="currency_id" invisible="1" />
+                    <field name="salary" widget='monetary' options="{'currency_field': 'currency_id', 'field_digits': True}" />
+                </tree>
+            </field>
+        </record>
+        <record id="medical_record_ses_form_view" model="ir.ui.view">
+            <field name="name">medical.record.ses.form.view</field>
+            <field name="model">medical.record.ses</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="o_title">
+                            <label for="relative" class="oe_edit_only" />
+                            <h1>
+                                <field name="relative" />
+                            </h1>
+                        </div>
+                        <group>
+                            <group name="incomes" string="Incomes">
+                                <field name="job" />
+                                <field name="studies" />
+                                <field name="currency_id" invisible="1" />
+                                <field name="salary" widget='monetary' options="{'currency_field': 'currency_id', 'field_digits': True}" />
+                            </group>
+                            <group name="personal_data" string="Personal Info.">
+                                <field name="marital_status" />
+                                <field name="another_details" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
         <!-- medical.record VIEWS -->
         <record id="medical_record_kanban_view" model="ir.ui.view">
             <field name="name">medical.record.kanban.view</field>
@@ -284,11 +329,12 @@
                         <div class="oe_title" style="width: 100%;">
                             <h1 style="width: 100%;">
                                 <field name="partner_id"
-                                       domain="[('customer', '=', True)]"
+                                       domain="[('company_type', '=', 'person'), ('customer', '=', True)]"
                                        placeholder="Patient name" />
                             </h1>
                             <h2 style="width: 75%;">
-                                <field name="name" placeholder="Record Number" />
+                                <field name="auto_numbering" invisible="1" />
+                                <field name="name" placeholder="Record Number" attrs="{'readonly': [('auto_numbering', '=', True)]}" />
                             </h2>
                         </div>
                         <div name="zone_gral_info">
@@ -297,9 +343,6 @@
                                     <field name="partner_email" readonly="1" attrs="{'invisible': [('partner_email', '=', False)]}" />
                                     <field name="partner_phone" readonly="1" attrs="{'invisible': [('partner_phone', '=', False)]}" />
                                     <field name="partner_mobile" readonly="1" attrs="{'invisible': [('partner_mobile', '=', False)]}" />
-                                </group>
-                                <group name="ses_zone">
-                                    <field name="require_ses"  />
                                 </group>
                             </group>
                         </div>
@@ -325,7 +368,7 @@
                                     </tree>
                                 </field>
                             </page> 
-                             <page name="logs" string="Logs">
+                            <page name="logs" string="Logs">
                                 <field name="log_ids" nolabel="1">
                                     <tree name="logs_tree_inside_medical_record_form">
                                         <field name="name" />
@@ -333,6 +376,18 @@
                                         <field name="start_datetime" />
                                         <field name="end_datetime" />
                                         <field name="medical_employee" />
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="ses" string="SES" attrs="{'invisible': [('group_ses', '=', False)]}">
+                                <field name="group_ses" invisible="1" />
+                                <field name="ses_ids" nolabel="1">
+                                    <tree name="ses_tree_inside_medical_record_form">
+                                        <field name="relative" />
+                                        <field name="job" />
+                                        <field name="marital_status" />
+                                        <field name="currency_id" invisible="1" />
+                                        <field name="salary" widget='monetary' options="{'currency_field': 'currency_id', 'field_digits': True}" sum="Total Incomes" />
                                     </tree>
                                 </field>
                             </page>
@@ -344,6 +399,50 @@
                         <field name="message_ids" widget="mail_thread"/>
                     </div>
                 </form>
+            </field>
+        </record>
+
+        <!-- res.config.settings VIEWS -->
+        <record id="inherited_res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">inherited.res.config.settings.view.form</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="base.res_config_settings_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('settings')]" position="inside" >
+                    <div class="app_settings_block" data-string="Medical Records" string="Medical Records" data-key="medical_record">
+                        <h2>Records</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-12 col-lg-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="auto_numbering" />
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="auto_numbering"/>
+                                    <div class="text-muted">
+                                        Records will have auto-numbering (see <i>medical_record_number</i> sequence).
+                                    </div>
+                                    <!-- <div class="content-group">
+                                        <div id="stock_delivery_ups"/>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <h2>Social-Economic Studies</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-12 col-lg-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="group_group_ses" />
+                                </div>
+                                <div class="o_setting_right_pane" id="barcode_settings">
+                                    <label for="group_group_ses"/>
+                                    <div class="text-muted">
+                                        Social-Economic Studies required for your Records, otherwise won't be at them.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </xpath>
             </field>
         </record>
     </data>

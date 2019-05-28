@@ -6,5 +6,10 @@
                 <link rel="stylesheet" type="text/css" href="/medical_record/static/src/css/medical_record_style.css"/>
             </xpath>
         </template>
+        <template id="report_assets_common" name="medical_record report_assets_common" inherit_id="web.report_assets_common">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" type="text/css" href="/medical_record/static/src/css/report_style.css"/>
+            </xpath>
+        </template>
     </data>
 </odoo>

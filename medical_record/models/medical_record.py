@@ -23,6 +23,8 @@
 # 
 ##########################################################################
 
+from ast import literal_eval
+
 from odoo import api, fields, models, _
 
 
@@ -34,10 +36,23 @@ class MedicalRecord(models.Model):
     # mail.activity.mixin = Basic Activity integration for chatter.
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
+
+    @api.model
+    def _default_name(self):
+        aux_name = False
+        get_param =  self.env['ir.config_parameter'].sudo().get_param
+        aux_auto_numbering = literal_eval(get_param(
+            'medical_record.auto_numbering', default='False'))
+        if not aux_auto_numbering:
+            aux_auto_numbering = False
+        if aux_auto_numbering:
+            aux_name = self.env['ir.sequence'].next_by_code('medical.record.number')
+        return aux_name
+
     name = fields.Char(
         string = "Record Number",
         help="Record Number.",
-        required=True
+        default=_default_name
     )
     partner_id = fields.Many2one(
         comodel_name="res.partner",
@@ -84,7 +99,33 @@ class MedicalRecord(models.Model):
         string="Backgrounds",
         help="Background about the patient."
     )
-    require_ses = fields.Boolean(
-        string="Is SES neccesary?",
-        help="SES = Social-Economic Study of patient."
+    ses_ids = fields.One2many(
+        comodel_name="medical.record.ses",
+        inverse_name="record_id",
+        string="SES",
+        help="Social-Economic Studies about the patient."
     )
+    group_ses = fields.Boolean(
+        compute="_compute_group_ses"
+    )
+    auto_numbering = fields.Boolean(
+        compute="_compute_auto_numbering"
+    )
+
+    @api.model
+    def _compute_group_ses(self):
+        get_param =  self.env['ir.config_parameter'].sudo().get_param
+        aux_group_ses = literal_eval(get_param(
+            'medical_record.group_group_ses', default='False'))
+        if not aux_group_ses:
+            aux_group_ses = False
+        self.group_ses = aux_group_ses
+
+    @api.model
+    def _compute_auto_numbering(self):
+        get_param =  self.env['ir.config_parameter'].sudo().get_param
+        aux_auto_numbering = literal_eval(get_param(
+            'medical_record.auto_numbering', default='False'))
+        if not aux_auto_numbering:
+            aux_auto_numbering = False
+        self.auto_numbering = aux_auto_numbering

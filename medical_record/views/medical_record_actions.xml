@@ -36,5 +36,20 @@
             res_model="medical.record.place"
             view_mode="tree,form"
             view_type="form" />
+
+        <act_window id="action_open_medical_record_ses_views"
+            name="Social-Economic Studies"
+            res_model="medical.record.place"
+            view_mode="tree,form"
+            view_type="form" />
+
+        <record id="action_medical_record_config_settings" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+            <field name="context">{'module' : 'medical_record'}</field>
+        </record>
     </data>
 </odoo>
