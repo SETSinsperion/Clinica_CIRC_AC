@@ -42,7 +42,8 @@ class MedicalRecordPlace(models.Model):
     )
     street2 = fields.Char(
         string="Reference Street",
-        help="Reference Street."
+        help="Reference Street.",
+        required=True
     )
     ext_number = fields.Char(
         string="Ext. Number",
@@ -53,24 +54,32 @@ class MedicalRecordPlace(models.Model):
         string="Int. Number",
         help="Internal Number of the place."
     )
-    city = fields.Char()
+    city = fields.Char(
+        string="City",
+        help="City where is located the medical place.",
+        required=True
+    )
     state_id = fields.Many2one(
         comodel_name="res.country.state",
         string='State',
-        ondelete='restrict'
+        ondelete='restrict',
+        required=True
     )
     country_id = fields.Many2one(
         comodel_name='res.country',
         string='Country',
-        ondelete='restrict'
+        ondelete='restrict',
+        required=True
     )
     phone = fields.Char(
         string="Phone",
-        help="Phone Number of the place."
+        help="Phone Number of the place.",
+        required=True
     )
     email = fields.Char(
         string="Email",
-        help="General email for contact of the place."
+        help="General email for contact of the place.",
+        required=True
     )
     website = fields.Char(
         string="Website",

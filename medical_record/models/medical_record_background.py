@@ -39,8 +39,7 @@ class MedicalRecordBackground(models.Model):
     )
     description = fields.Text(
         string='Details',
-        help='Background description of the patient.',
-        required=True
+        help='Background description of the patient.'
     )
     type = fields.Selection(
         [('patho', 'Pathological'), ('hered', 'Hereditary')],
