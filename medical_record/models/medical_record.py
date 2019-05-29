@@ -117,6 +117,17 @@ class MedicalRecord(models.Model):
     auto_numbering = fields.Boolean(
         compute="_compute_auto_numbering"
     )
+    calendar_event_ids = fields.One2many(
+        comodel_name="calendar.event",
+        inverse_name="record_id",
+        string="Appointments",
+        help="Appointments Count for patient on this record.."
+    )
+    calendar_event_count = fields.Integer(
+        string="Appointments Count",
+        help="Appointments Count for patient on this record.",
+        compute="_compute_calendar_event_count"
+    )
 
     @api.model
     def _compute_group_ses(self):
@@ -140,3 +151,20 @@ class MedicalRecord(models.Model):
     def _compute_partner_initial_name(self):
         for record in self:
             record.partner_initial_name = record.partner_id.name[0]
+
+    @api.depends('calendar_event_ids')
+    def _compute_calendar_event_count(self):
+        for record in self:
+            record.calendar_event_count = len(record.calendar_event_ids)
+
+    @api.multi
+    def do_open_record_events(self):
+        action = {
+            'name': _('Appointments'),
+            'type': 'ir.actions.act_window',
+            'res_model': 'calendar.event',
+            'view_mode': 'calendar,tree,form',
+            'target': 'new',
+            'domain': [('record_id', '=', self.id)],
+        }
+        return action

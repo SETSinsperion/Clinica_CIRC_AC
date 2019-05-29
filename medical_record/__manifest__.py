@@ -43,7 +43,8 @@ Medical Records for Medical Centers
         'web',
         'mail',
         'contacts',
-        'hr'
+        'hr',
+        'calendar'
     ],
     'data': [
         'data/medical_record_data.xml',
@@ -52,6 +53,7 @@ Medical Records for Medical Centers
         'views/web_assets.xml',
         'views/medical_record_views.xml',
         'views/inherited_base_views.xml',
+        'views/inherited_calendar_views.xml',
         'views/medical_record_actions.xml',
         'views/medical_record_menus.xml',
         'report/report_record.xml'
