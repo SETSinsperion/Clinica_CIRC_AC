@@ -69,3 +69,10 @@ class ResPartner(models.Model):
                 self.country_id.name if self.country_id else ''
             )
         return address
+
+    @api.model
+    def getStrAge(self):
+        years_age = '%s' % ('%s' % self.age).split('.')[0]
+        months_age = '%s' % int(('%s' % self.age).split('.')[1])
+        return '%s%s' % (_('%s year(s) ') % years_age if int(years_age) > 0 else '',
+                         _('%s month(s)') % months_age if int(months_age) > 0 else '')

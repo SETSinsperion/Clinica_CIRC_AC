@@ -129,6 +129,11 @@ class MedicalRecord(models.Model):
         compute="_compute_calendar_event_count"
     )
 
+    _sql_constraints = [
+        # A patient CAN'T HAVE > 1 record
+        ('partner_id_unique', 'unique(partner_id)', 'The partner has a medical record yet!')
+    ]
+
     @api.model
     def _compute_group_ses(self):
         get_param =  self.env['ir.config_parameter'].sudo().get_param
