@@ -28,7 +28,7 @@ from odoo import api, fields, models, _
 class MedicalRecordPlace(models.Model):
 
     _name = "medical.record.place"
-    _description = "Places in medical records are clinics, hospitals, mdical centers, etc."
+    _description = "Places in medical records are clinics, hospitals, medical centers, etc."
 
     name = fields.Char(
         string="Name",
@@ -37,7 +37,7 @@ class MedicalRecordPlace(models.Model):
     )
     street = fields.Char(
         string="Street",
-        help="Stree.t",
+        help="Street.",
         required=True
     )
     street2 = fields.Char(
@@ -78,5 +78,5 @@ class MedicalRecordPlace(models.Model):
     )
     social_mediums_info = fields.Text (
         string="Social Media",
-        help="social Media information for contact (if any)."
+        help="Social Media information for contact (if any)."
     )

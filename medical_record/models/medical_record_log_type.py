@@ -32,6 +32,6 @@ class MedicalRecordHabit(models.Model):
 
     name = fields.Char(
         string="Log Type",
-        help="Name of the log Type.",
+        help="Name of the Log Type.",
         required=True
     )

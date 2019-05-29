@@ -1,0 +1,1082 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* medical_record
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-29 18:31+0000\n"
+"PO-Revision-Date: 2019-05-29 18:31+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: medical_record
+#: model_terms:ir.ui.view,arch_db:medical_record.report_medical_record_document
+msgid "<span class=\"label-field-header\"><b>Address</b></span>"
+msgstr "<span class=\"label-field-header\"><b>Dirección</b></span>"
+
+#. module: medical_record
+#: model_terms:ir.ui.view,arch_db:medical_record.report_medical_record_document
+msgid "<span class=\"label-field-header\"><b>Age</b></span>"
+msgstr "<span class=\"label-field-header\"><b>Edad</b></span>"
+
+#. module: medical_record
+#: model_terms:ir.ui.view,arch_db:medical_record.report_medical_record_document
+msgid "<span class=\"label-field-header\"><b>Email</b></span>"
+msgstr "<span class=\"label-field-header\"><b>Correo Electrónico</b></span>"
+
+#. module: medical_record
+#: model_terms:ir.ui.view,arch_db:medical_record.report_medical_record_document
+msgid "<span class=\"label-field-header\"><b>Mobile</b></span>"
+msgstr "<span class=\"label-field-header\"><b>Móvil</b></span>"
+
+#. module: medical_record
+#: model_terms:ir.ui.view,arch_db:medical_record.report_medical_record_document
+msgid "<span class=\"label-field-header\"><b>Patient Name</b></span>"
+msgstr "<span class=\"label-field-header\"><b>Nombre del Paciente</b></span>"
+
+#. module: medical_record
+#: model_terms:ir.ui.view,arch_db:medical_record.report_medical_record_document
+msgid "<span class=\"label-field-header\"><b>Phone</b></span>"
+msgstr "<span class=\"label-field-header\"><b>Teléfono</b></span>"
+
+#. module: medical_record
+#: model_terms:ir.ui.view,arch_db:medical_record.report_medical_record_document
+msgid "<span><b>Datetime:</b></span>"
+msgstr "<span><b>Fecha y Hora:</b></span>"
+
+#. module: medical_record
+#: model_terms:ir.ui.view,arch_db:medical_record.report_medical_record_document
+msgid "<span><b>Printed by:</b></span>"
+msgstr "<span><b>Impreso por:</b></span>"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_ses__studies
+msgid "Academic history."
+msgstr "Estudios."
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__message_needaction
+msgid "Action Needed"
+msgstr "Acción Necesaria"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__activity_state
+msgid "Activity State"
+msgstr "Estado de la actividad"
+
+#. module: medical_record
+#: model_terms:ir.ui.view,arch_db:medical_record.medical_record_place_form_view
+msgid "Address"
+msgstr "Dirección"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_res_partner__age
+#: model:ir.model.fields,field_description:medical_record.field_res_users__age
+msgid "Age"
+msgstr "Edad"
+
+#. module: medical_record
+#: selection:medical.record.habit,type:0
+msgid "Alimentary"
+msgstr "Alimentaria"
+
+#. module: medical_record
+#: model:res.groups,comment:medical_record.group_ses
+msgid "Allow SES to be in Medical Records."
+msgstr "Permite estar al ESE en los Expediente Médicos."
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_ses__salary
+msgid "Amount earned per month."
+msgstr "Cantidad ganada por mes"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_ses__another_details
+msgid "Another Details"
+msgstr "Otros Detalles"
+
+#. module: medical_record
+#: code:addons/medical_record/models/medical_record.py:163
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__calendar_event_ids
+#: model_terms:ir.ui.view,arch_db:medical_record.medical_record_form_view
+#, python-format
+msgid "Appointments"
+msgstr "Citas"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__calendar_event_count
+msgid "Appointments Count"
+msgstr "Conteo de Citas"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record__calendar_event_count
+msgid "Appointments Count for patient on this record."
+msgstr "Conteo de Citas para el paciente sobre este expediente."
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record__calendar_event_ids
+msgid "Appointments for patient on this record."
+msgstr "Citas para el paciente sobre este expediente."
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__message_attachment_count
+msgid "Attachment Count"
+msgstr "Conteo de archivos adjuntos"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__auto_numbering
+msgid "Auto Numbering"
+msgstr "Auto-Nombrado"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_res_config_settings__auto_numbering
+msgid "Auto-Numbering for Records"
+msgstr "Auto-Nombrado para Expediente"
+
+#. module: medical_record
+#: selection:medical.record.ses,studies:0
+msgid "Bachelor's degree"
+msgstr "Licenciatura"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record__background_ids
+msgid "Backgrounds about the patient."
+msgstr "Antecendentes acerca del paciente."
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_background__description
+msgid "Background description of the patient."
+msgstr "Descripción del antecedente"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_background__summary
+msgid "Background summary."
+msgstr "Resumen del Antecendente."
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_background__type
+msgid "Background type."
+msgstr "Tipo de Antecedente."
+
+#. module: medical_record
+#: model:ir.actions.act_window,name:medical_record.action_open_medical_record_background_views
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__background_ids
+#: model:ir.ui.menu,name:medical_record.menu_backgrounds
+#: model_terms:ir.ui.view,arch_db:medical_record.medical_record_form_view
+#: model_terms:ir.ui.view,arch_db:medical_record.report_medical_record_document
+msgid "Backgrounds"
+msgstr "Antecedentes"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_log__name
+msgid "Brief description about the entry in the history."
+msgstr "Descripción breve acerca del registro en la historial."
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_place__city
+msgid "City"
+msgstr "Ciudad"
+
+#. module: medical_record
+#: model:ir.model,name:medical_record.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de Configuración"
+
+#. module: medical_record
+#: model:ir.ui.menu,name:medical_record.menu_medical_record_config
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: medical_record
+#: model:ir.model,name:medical_record.model_res_partner
+#: model_terms:ir.ui.view,arch_db:medical_record.medical_record_place_form_view
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_place__country_id
+msgid "Country"
+msgstr "País"
+
+#. module: medical_record
+#: model_terms:ir.actions.act_window,help:medical_record.action_open_medical_record_views
+msgid "Create here your Medical Records"
+msgstr "Crea aquí tus Expedientes Médicos"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__create_uid
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_background__create_uid
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_habit__create_uid
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_log__create_uid
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_log_type__create_uid
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_place__create_uid
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_ses__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__create_date
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_background__create_date
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_habit__create_date
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_log__create_date
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_log_type__create_date
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_place__create_date
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_ses__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_ses__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: medical_record
+#: model_terms:ir.ui.view,arch_db:medical_record.report_medical_record_document
+msgid "Description"
+msgstr "Descripción"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_background__description
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_habit__description
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_log__details
+#: model_terms:ir.ui.view,arch_db:medical_record.medical_record_log_form_view
+#: model_terms:ir.ui.view,arch_db:medical_record.report_medical_record_document
+msgid "Details"
+msgstr "Detalles"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_log__details
+msgid "Details about the entry in the history."
+msgstr "Detalles acerca del registro en el historial."
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__diagnosis
+#: model_terms:ir.ui.view,arch_db:medical_record.medical_record_form_view
+#: model_terms:ir.ui.view,arch_db:medical_record.report_medical_record_document
+msgid "Diagnosis"
+msgstr "Diagnóstico"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record__diagnosis
+msgid "Diagnosis about the patient."
+msgstr "Diagnóstico acerca del patience."
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__display_name
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_background__display_name
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_habit__display_name
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_log__display_name
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_log_type__display_name
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_place__display_name
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_ses__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: medical_record
+#: selection:medical.record.ses,marital_status:0
+msgid "Divorced"
+msgstr "Divorciado"
+
+#. module: medical_record
+#: model:ir.model,name:medical_record.model_medical_record
+msgid "Electronic version about medical records."
+msgstr "Versión electrónica acerca de los expedientes médicos."
+
+#. module: medical_record
+#: selection:medical.record.ses,studies:0
+msgid "Elementary"
+msgstr "Primaria"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__partner_email
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_place__email
+msgid "Email"
+msgstr "Correo electrónico"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_log__end_datetime
+#: model_terms:ir.ui.view,arch_db:medical_record.report_medical_record_document
+msgid "End of the stay"
+msgstr "Fin de la estadía"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_log__end_datetime
+msgid "End of the stay in medical place."
+msgstr "Fin de la estadía en el centro médico."
+
+#. module: medical_record
+#: model:ir.model,name:medical_record.model_calendar_event
+msgid "Event"
+msgstr "Evento"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_place__ext_number
+msgid "Ext. Number"
+msgstr "Número Ext."
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_place__ext_number
+msgid "External Number of the place."
+msgstr "Número Externo del lugar."
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Canales)"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Empresas)"
+
+#. module: medical_record
+#: model_terms:ir.ui.view,arch_db:medical_record.medical_record_background_form_view
+#: model_terms:ir.ui.view,arch_db:medical_record.medical_record_habit_form_view
+msgid "For"
+msgstr "Para"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_ses__another_details
+msgid "For the relative any detail that does not take in count above-data."
+msgstr "Cualquier detalle que no se tomó en cuenta arriba."
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_place__email
+msgid "General email for contact of the place."
+msgstr "Correo electrónico general para el lugar."
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__group_ses
+msgid "Group Ses"
+msgstr "Grupo ESE"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_habit__name
+#: model_terms:ir.ui.view,arch_db:medical_record.report_medical_record_document
+msgid "Habit"
+msgstr "Habito"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record__habit_ids
+msgid "Habit about the patient."
+msgstr "Habito acerca del paciente."
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_habit__description
+msgid "Habit description of the patient."
+msgstr "Descripción del Hábito del paciente."
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_habit__type
+msgid "Habit type."
+msgstr "Tipo de Hábito."
+
+#. module: medical_record
+#: model:ir.actions.act_window,name:medical_record.action_open_medical_record_habit_views
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__habit_ids
+#: model:ir.ui.menu,name:medical_record.menu_habits
+#: model_terms:ir.ui.view,arch_db:medical_record.medical_record_form_view
+#: model_terms:ir.ui.view,arch_db:medical_record.report_medical_record_document
+msgid "Habits"
+msgstr "Hábitos"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_habit__name
+msgid "Habits of the patient."
+msgstr "Hábitos del pacientes."
+
+#. module: medical_record
+#: model:ir.model,name:medical_record.model_medical_record_habit
+msgid "Habits that patients have to complete medical records: alimentary, physical and hobbies."
+msgstr "Hábitos que los pacientes tiene para completar los expedientes médicos: alimentarios, físicos y pasatiempos."
+
+#. module: medical_record
+#: model:ir.module.category,description:medical_record.module_category_medical_record
+msgid "Handle with medical records from your patients."
+msgstr "Administra con expedientes médicos de sus pacientes."
+
+#. module: medical_record
+#: selection:medical.record.background,type:0
+msgid "Hereditary"
+msgstr "Hereditarios"
+
+#. module: medical_record
+#: selection:medical.record.ses,studies:0
+msgid "High School"
+msgstr "Bachillerato"
+
+#. module: medical_record
+#: selection:medical.record.habit,type:0
+msgid "Hobbies"
+msgstr "Pasatiempos"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__id
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_background__id
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_habit__id
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_log__id
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_log_type__id
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_place__id
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_ses__id
+msgid "ID"
+msgstr "ID"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record__message_unread
+msgid "If checked new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención."
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío."
+
+#. module: medical_record
+#: model_terms:ir.ui.view,arch_db:medical_record.medical_record_ses_form_view
+msgid "Incomes"
+msgstr "Ingresos"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record__partner_id
+msgid "Information about patient."
+msgstr "Información acerca del paciente."
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__partner_initial_name
+#: model_terms:ir.ui.view,arch_db:medical_record.medical_record_search_view
+msgid "Initial"
+msgstr "Inicial"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_place__int_number
+msgid "Int. Number"
+msgstr "Número Int."
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_place__int_number
+msgid "Internal Number of the place."
+msgstr "Número Interno del lugar."
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__message_is_follower
+msgid "Is Follower"
+msgstr "Es un seguidor"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_res_config_settings__group_group_ses
+msgid "Is SES required?"
+msgstr "¿Es requerido el ESE?"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_ses__job
+msgid "Job of the Relative"
+msgstr "Trabajo del Familiar."
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record____last_update
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_background____last_update
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_habit____last_update
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_log____last_update
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_log_type____last_update
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_place____last_update
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_ses____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__write_uid
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_background__write_uid
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_habit__write_uid
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_log__write_uid
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_log_type__write_uid
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_place__write_uid
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_ses__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__write_date
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_background__write_date
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_habit__write_date
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_log__write_date
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_log_type__write_date
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_place__write_date
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_ses__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: medical_record
+#: model_terms:ir.ui.view,arch_db:medical_record.medical_record_place_form_view
+msgid "Location"
+msgstr "Ubicación"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_log__log_type_id
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_log_type__name
+msgid "Log Type"
+msgstr "Tipo de Registro"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_log__log_type_id
+msgid "Log Type (example: Medical appointment, Surgical operation, Therapy)."
+msgstr "Tipo de Registro (ejemplo: Cita médica, Cirugía, Terapia)."
+
+#. module: medical_record
+#: model:ir.actions.act_window,name:medical_record.action_open_medical_record_log_type_views
+msgid "Log Types"
+msgstr "Tipos de Registro"
+
+#. module: medical_record
+#: model_terms:ir.ui.view,arch_db:medical_record.medical_record_form_view
+#: model_terms:ir.ui.view,arch_db:medical_record.report_medical_record_document
+msgid "Logs"
+msgstr "Historial"
+
+#. module: medical_record
+#: model:ir.model,name:medical_record.model_medical_record_log
+msgid "Logs are records that have in count place, medical employees and another data about patient's medical situation."
+msgstr "El Historial contiene registros que toman en cuenta el lugar, cuerpo médico y otros datos acerca de la situación médica del paciente."
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjuntos principales"
+
+#. module: medical_record
+#: model_terms:ir.actions.act_window,help:medical_record.action_open_medical_record_views
+msgid "Manage your company records according to your profile\n"
+"                    (Manager or User)."
+msgstr "Administre sus expendientes médicos acorde a su grupo\n"
+"                    (Administrador o Usuario)."
+
+#. module: medical_record
+#: model:res.groups,name:medical_record.group_medical_record_manager
+msgid "Manager"
+msgstr "Administrador"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_ses__marital_status
+msgid "Marital Status"
+msgstr "Estado Civil"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_ses__marital_status
+msgid "Marital Status."
+msgstr "Estado Civil."
+
+#. module: medical_record
+#: selection:medical.record.ses,marital_status:0
+msgid "Married"
+msgstr "Casado"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_log__medical_employee
+#: model:ir.model.fields,help:medical_record.field_medical_record_log__medical_employee
+#: model_terms:ir.ui.view,arch_db:medical_record.report_medical_record_document
+msgid "Medical Employee"
+msgstr "Cuerpo Médico"
+
+#. module: medical_record
+#: model:ir.ui.menu,name:medical_record.menu_log_types
+msgid "Medical Log Types"
+msgstr "Tipos de Registros Médicos"
+
+#. module: medical_record
+#: model:ir.actions.act_window,name:medical_record.action_open_medical_record_log_views
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__log_ids
+#: model:ir.ui.menu,name:medical_record.menu_logs
+msgid "Medical Logs"
+msgstr "Registros Médicos"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record__log_ids
+msgid "Medical Logs about the hospitals, clinics, medical centers, etcetera, that patient has passed."
+msgstr "Registros Médicos acerca de los hospitales, clínicas, centro médicos, etcétera, que ha pasado el paciente."
+
+#. module: medical_record
+#: model:ir.actions.act_window,name:medical_record.action_open_medical_record_place_views
+#: model:ir.ui.menu,name:medical_record.menu_medical_places
+msgid "Medical Places"
+msgstr "Lugares Médicos"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_calendar_event__record_id
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_background__record_id
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_habit__record_id
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_log__record_id
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_ses__record_id
+#: model:ir.module.category,name:medical_record.module_category_medical_record
+msgid "Medical Record"
+msgstr "Expediente Médico"
+
+#. module: medical_record
+#: model:ir.actions.act_window,name:medical_record.action_open_medical_record_views
+#: model_terms:ir.ui.view,arch_db:medical_record.inherited_res_config_settings_view_form
+msgid "Medical Records"
+msgstr "Expedientes Médicos"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_calendar_event__record_id
+#: model:ir.model.fields,help:medical_record.field_medical_record_background__record_id
+#: model:ir.model.fields,help:medical_record.field_medical_record_habit__record_id
+#: model:ir.model.fields,help:medical_record.field_medical_record_log__record_id
+#: model:ir.model.fields,help:medical_record.field_medical_record_ses__record_id
+msgid "Medical record."
+msgstr "Expediente médico."
+
+#. module: medical_record
+#: model:ir.model,name:medical_record.model_medical_record_background
+msgid "Medicals Backgrounds, both pathological and hereditary."
+msgstr "Antecedentes Médicos, hereditarios y patológicos."
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de Envío de Mensaje"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__partner_mobile
+msgid "Mobile"
+msgstr "Móvil"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_place__name
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_ses__relative
+msgid "Name"
+msgstr "Nombre"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_log_type__name
+msgid "Name of the Log Type."
+msgstr "Nombre del Tipo de Registro."
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_place__name
+msgid "Name of the medical place."
+msgstr "Nombre del lugar médico."
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Siguiente plazo de actividad"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la siguiente actividad"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__activity_type_id
+msgid "Next Activity Type"
+msgstr "Siguiente tipo de actividad"
+
+#. module: medical_record
+#: selection:medical.record.ses,studies:0
+msgid "No studies"
+msgstr "Sin estudios"
+
+#. module: medical_record
+#: code:addons/medical_record/models/inherited_res_partner.py:56
+#, python-format
+msgid "Not address."
+msgstr "Sin dirección."
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__message_has_error_counter
+msgid "Number of error"
+msgstr "Número de error"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de envío"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leidos"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_ses__job
+msgid "Occupation"
+msgstr "Ocupación"
+
+#. module: medical_record
+#: selection:medical.record,activity_state:0
+msgid "Overdue"
+msgstr "Atrasado"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_res_partner__age
+#: model:ir.model.fields,help:medical_record.field_res_users__age
+msgid "Partner's age. For more specific data, try to fill years & months\n"
+"(digits to the right of the decimal point)."
+msgstr "Edad del Partner. Para más información, proporciona años y meses\n"
+"(dígitos a la derecha del punto decimal)."
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record__partner_initial_name
+msgid "Partner's name initial, example Tony = T."
+msgstr "Inicial del nombre del Partner, ejemplo: Antonio = A."
+
+#. module: medical_record
+#: selection:medical.record.background,type:0
+msgid "Pathological"
+msgstr "Patológico"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__partner_id
+msgid "Patient"
+msgstr "Paciente"
+
+#. module: medical_record
+#: model:ir.ui.menu,name:medical_record.menu_patient_information
+msgid "Patient Information"
+msgstr "Información del Paciente"
+
+#. module: medical_record
+#: model_terms:ir.ui.view,arch_db:medical_record.medical_record_form_view
+msgid "Patient name"
+msgstr "Nombre del Paciente"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__profile_image
+msgid "Patient photo"
+msgstr "Foto del Paciente"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record__profile_image
+msgid "Patient photo."
+msgstr "Foto del paciente."
+
+#. module: medical_record
+#: model_terms:ir.ui.view,arch_db:medical_record.medical_record_ses_form_view
+msgid "Personal Info."
+msgstr "Información del Paciente."
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__partner_phone
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_place__phone
+msgid "Phone"
+msgstr "Teléfono"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_place__phone
+msgid "Phone Number of the place."
+msgstr "Número del Teléfono del lugar."
+
+#. module: medical_record
+#: selection:medical.record.habit,type:0
+msgid "Physical Activities"
+msgstr "Actividades Físicas"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_log__place_id
+#: model_terms:ir.ui.view,arch_db:medical_record.report_medical_record_document
+msgid "Place"
+msgstr "Lugar"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_log__place_id
+msgid "Place where stayed the patience."
+msgstr "Lugar de estadía del paciente."
+
+#. module: medical_record
+#: model:ir.model,name:medical_record.model_medical_record_place
+msgid "Places in medical records are clinics, hospitals, medical centers, etc."
+msgstr "Lugares en los expedientes médicos son clínicas, hospitales, centro médicos, etc."
+
+#. module: medical_record
+#: selection:medical.record,activity_state:0
+msgid "Planned"
+msgstr "Planificado"
+
+#. module: medical_record
+#: selection:medical.record.ses,studies:0
+msgid "Postgraduate"
+msgstr "Posgrado"
+
+#. module: medical_record
+#: model:ir.actions.report,name:medical_record.action_report_medical_record
+msgid "Record"
+msgstr "Expediente"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__name
+#: model_terms:ir.ui.view,arch_db:medical_record.medical_record_form_view
+#: model_terms:ir.ui.view,arch_db:medical_record.medical_record_search_view
+msgid "Record Number"
+msgstr "Número del Expediente"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record__name
+msgid "Record Number."
+msgstr "Número Expediente."
+
+#. module: medical_record
+#: model:ir.ui.menu,name:medical_record.medical_record_menu_root
+#: model:ir.ui.menu,name:medical_record.menu_medical_record
+#: model_terms:ir.ui.view,arch_db:medical_record.inherited_res_config_settings_view_form
+msgid "Records"
+msgstr "Expedientes"
+
+#. module: medical_record
+#: model_terms:ir.ui.view,arch_db:medical_record.medical_record_search_view
+msgid "Records for Initial"
+msgstr "Expedientes para Inicial"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_res_config_settings__auto_numbering
+#: model_terms:ir.ui.view,arch_db:medical_record.inherited_res_config_settings_view_form
+msgid "Records will have auto-numbering (see <i>medical_record_number</i> sequence)."
+msgstr "Expedientes serán auto-nombrados (véase la secuencia <i>medical_record_number</i>)."
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_place__street2
+msgid "Reference Street"
+msgstr "Calle de Referencia"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_place__street2
+msgid "Reference Street."
+msgstr "Calle de Referencia."
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_ses__relative
+msgid "Relative Name"
+msgstr "Nombre del Familiar"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario Responsable"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__ses_ids
+#: model_terms:ir.ui.view,arch_db:medical_record.medical_record_form_view
+msgid "SES"
+msgstr "ESE"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_ses__salary
+msgid "Salary"
+msgstr "Salario"
+
+#. module: medical_record
+#: model_terms:ir.ui.view,arch_db:medical_record.medical_record_search_view
+msgid "Search Resource"
+msgstr "Buscar recurso"
+
+#. module: medical_record
+#: selection:medical.record.ses,studies:0
+msgid "Secondary"
+msgstr "Secuendaria"
+
+#. module: medical_record
+#: model:ir.actions.act_window,name:medical_record.action_medical_record_config_settings
+msgid "Settings"
+msgstr "Ajustes"
+
+#. module: medical_record
+#: selection:medical.record.ses,marital_status:0
+msgid "Single"
+msgstr "Soltero"
+
+#. module: medical_record
+#: model:ir.ui.menu,name:medical_record.menu_ses
+msgid "Social-Economic Studies"
+msgstr "Estudios Socio-Economicos"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_place__social_mediums_info
+msgid "Social Media"
+msgstr "Redes Sociales"
+
+#. module: medical_record
+#: model:ir.actions.act_window,name:medical_record.action_open_medical_record_ses_views
+#: model_terms:ir.ui.view,arch_db:medical_record.inherited_res_config_settings_view_form
+#: model:res.groups,name:medical_record.group_ses
+msgid "Social-Economic Studies"
+msgstr "Estudios Socio-Economicos"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record__ses_ids
+msgid "Social-Economic Studies about the patient."
+msgstr "Estudios Socio-Economicos acerca del paciente."
+
+#. module: medical_record
+#: model:ir.model,name:medical_record.model_medical_record_ses
+msgid "Social-Economic Studies is a relevant medical record zone about patient's relatives."
+msgstr "Estudios Socio-Economicos es una zona relevante acerca de los familiares del paciente."
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_res_config_settings__group_group_ses
+#: model_terms:ir.ui.view,arch_db:medical_record.inherited_res_config_settings_view_form
+msgid "Social-Economic Studies required for your Records, otherwise won't be at them."
+msgstr "Estudios Socio-Economicos requeridos para sus expedientes, de otra manera no estarán disponibles."
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_log__start_datetime
+#: model_terms:ir.ui.view,arch_db:medical_record.report_medical_record_document
+msgid "Start of the stay"
+msgstr "Inicio de la estadía"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_log__start_datetime
+msgid "Start of the stay in medical place."
+msgstr "Inicio de la estadía en el lugar médico."
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_place__state_id
+msgid "State"
+msgstr "Estado"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record__activity_state
+msgid "Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr "Estado basado en actividades\n"
+"Vencida: la fecha tope ya ha pasado\n"
+"Hoy: La fecha tope es hoy\n"
+"Planificada: futuras actividades."
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_place__street
+msgid "Street."
+msgstr "Calle."
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_place__street
+msgid "Street"
+msgstr "Calle"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_ses__studies
+msgid "Studies"
+msgstr "Estudios"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_background__summary
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_log__name
+#: model_terms:ir.ui.view,arch_db:medical_record.report_medical_record_document
+msgid "Summary"
+msgstr "Resumen"
+
+#. module: medical_record
+#: model:res.groups,comment:medical_record.group_medical_record_manager
+msgid "The Manager will be able to do all operations with medical records."
+msgstr "El Administrador será capaz de hacer todas las operaciones con los expedientes médicos."
+
+#. module: medical_record
+#: model:res.groups,comment:medical_record.group_medical_record_user
+msgid "The User will be able to read and edit medical records."
+msgstr "El Usuario será capaz de editar y leer los expedientes médicos."
+
+#. module: medical_record
+#: code:addons/medical_record/models/inherited_res_partner.py:49
+#, python-format
+msgid "There are 12 months in a single year, please type a valid age\n"
+"(you typed %s months)."
+msgstr "Hay 12 meses en un año, tecleen una edad valida por favor\n"
+"(escribiste %s meses)"
+
+#. module: medical_record
+#: selection:medical.record,activity_state:0
+msgid "Today"
+msgstr "Hoy"
+
+#. module: medical_record
+#: model_terms:ir.ui.view,arch_db:medical_record.medical_record_form_view
+msgid "Total Incomes"
+msgstr "Total de Ingresos"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_background__type
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_habit__type
+#: model_terms:ir.ui.view,arch_db:medical_record.report_medical_record_document
+msgid "Type"
+msgstr "Tipo"
+
+#. module: medical_record
+#: model:ir.model,name:medical_record.model_medical_record_log_type
+msgid "Type of the Logs that medical records have."
+msgstr "Tipo de los Registros que los expendientes médicos tienen."
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__message_unread
+msgid "Unread Messages"
+msgstr "Mensajes por leer"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de mensajes sin leer"
+
+#. module: medical_record
+#: model:res.groups,name:medical_record.group_medical_record_user
+msgid "User"
+msgstr "Usuario"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record_place__website
+msgid "Website"
+msgstr "Sitio web"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_place__website
+msgid "Website of the place."
+msgstr "Sitio web del lugar."
+
+#. module: medical_record
+#: selection:medical.record.ses,marital_status:0
+msgid "Widowed"
+msgstr "Viuda/o"
+
+#. module: medical_record
+#: code:addons/medical_record/models/inherited_res_partner.py:63
+#, python-format
+msgid "ZIP %s"
+msgstr "C.P. %s"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_place__social_mediums_info
+msgid "Social Media information for contact (if any)."
+msgstr "Información de las Redes Sociales  para el contacto (si tiene)."

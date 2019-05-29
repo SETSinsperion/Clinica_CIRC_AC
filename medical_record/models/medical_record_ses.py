@@ -37,7 +37,7 @@ class MedicalRecordSocioEconomicStudy(models.Model):
     )
     job = fields.Char(
         string = 'Occupation',
-        help = 'Jobs.',
+        help = 'Job of the Relative.',
         required=True
     )
     salary = fields.Float(
@@ -66,7 +66,7 @@ class MedicalRecordSocioEconomicStudy(models.Model):
     )
     another_details = fields.Char(
         string = 'Another Details',
-        help = 'For the relative any detail that does not take in count above-data.'
+        help = 'Any detail that does not take in count above-data.'
     )
     record_id = fields.Many2one(
         comodel_name="medical.record",
