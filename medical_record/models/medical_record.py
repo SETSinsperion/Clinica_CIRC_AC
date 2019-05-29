@@ -103,7 +103,7 @@ class MedicalRecord(models.Model):
         comodel_name="medical.record.background",
         inverse_name="record_id",
         string="Backgrounds",
-        help="Background about the patient."
+        help="Backgrounds about the patient."
     )
     ses_ids = fields.One2many(
         comodel_name="medical.record.ses",
@@ -121,13 +121,18 @@ class MedicalRecord(models.Model):
         comodel_name="calendar.event",
         inverse_name="record_id",
         string="Appointments",
-        help="Appointments Count for patient on this record.."
+        help="Appointments for patient on this record."
     )
     calendar_event_count = fields.Integer(
         string="Appointments Count",
         help="Appointments Count for patient on this record.",
         compute="_compute_calendar_event_count"
     )
+
+    _sql_constraints = [
+        # A patient CAN'T HAVE > 1 record
+        ('partner_id_unique', 'unique(partner_id)', 'The partner has a medical record yet!')
+    ]
 
     @api.model
     def _compute_group_ses(self):

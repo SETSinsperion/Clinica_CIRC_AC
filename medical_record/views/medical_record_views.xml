@@ -274,7 +274,7 @@
                 <search string="Search Resource">
                     <field name="name" string="Record Number" />
                     <field name="partner_initial_name" string="Initial" />
-                    <filter name="groupby_partner_initial_name" string="Records for Initial." context="{'group_by': 'partner_initial_name'}" />
+                    <filter name="groupby_partner_initial_name" string="Records for Initial" context="{'group_by': 'partner_initial_name'}" />
                 </search>
             </field>
         </record>
