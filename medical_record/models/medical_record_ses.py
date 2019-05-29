@@ -64,7 +64,7 @@ class MedicalRecordSocioEconomicStudy(models.Model):
         help='Marital Status.',
         required=True
     )
-    another_details = fields.Char(
+    another_details = fields.Text(
         string = 'Another Details',
         help = 'Any detail that does not take in count above-data.'
     )
