@@ -333,7 +333,9 @@
                     </header>
                     <sheet>
                         <div class="oe_button_box" name="button_box">
-
+                            <button name="do_open_record_events" type="object" class="oe_stat_button" icon="fa-calendar">
+                                <field name="calendar_event_count" widget="statinfo" string="Appointments" />
+                            </button>
                         </div>
                         <!-- <field name="profile_image_filename" invisible="1" /> -->
                         <field name="profile_image" widget="image" class="oe_avatar" />

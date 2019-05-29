@@ -23,13 +23,25 @@
 # 
 ##########################################################################
 
-from . import res_config_settings
-from . import medical_record_background
-from . import medical_record_habit
-from . import medical_record_place
-from . import medical_record_log_type
-from . import medical_record_log
-from . import medical_record_ses
-from . import medical_record
-from . import inherited_res_partner
-from . import inherited_calendar_event
+from odoo import api, fields, models, _
+
+
+class CalendarEvent(models.Model):
+
+    _inherit = 'calendar.event'
+
+    record_id = fields.Many2one(
+        comodel_name="medical.record",
+        string="Medical Record",
+        help="Medical record."
+    )
+
+    @api.onchange('partner_ids')
+    def _onchange_partner_ids(self):
+        for partner in self.partner_ids:
+            aux_record_id = self.env['medical.record'].search([
+                ('partner_id', '=', partner.id)
+            ])
+            if aux_record_id:
+                self.record_id = aux_record_id
+                break
