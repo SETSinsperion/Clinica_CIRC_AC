@@ -318,7 +318,7 @@
             <field name="name">medical.record.tree.view</field>
             <field name="model">medical.record</field>
             <field name="arch" type="xml">
-                <tree name="medical_record_tree">
+                <tree name="medical_record_tree" default_order="partner_initial_name">
                     <field name="name" />
                     <field name="partner_id" />
                 </tree>
