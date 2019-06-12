@@ -23,14 +23,15 @@
 # 
 ##########################################################################
 
-from . import inherited_res_company
-from . import res_config_settings
-from . import medical_record_background
-from . import medical_record_habit
-from . import medical_record_place
-from . import medical_record_log_type
-from . import medical_record_log
-from . import medical_record_ses
-from . import medical_record
-from . import inherited_res_partner
-from . import inherited_calendar_event
+from odoo import api, fields, models
+
+
+class ResCompany(models.Model):
+    
+    _inherit = 'res.company'
+
+    seq_auto_numbering_id = fields.Many2one(
+        comodel_name="ir.sequence",
+        string="Auto-Numbering Sequence",
+        help="Enable the auto-numbering for medical records with the selected sequence."
+    )

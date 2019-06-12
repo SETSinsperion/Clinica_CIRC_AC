@@ -48,8 +48,8 @@ class MedicalRecordSocioEconomicStudy(models.Model):
     studies = fields.Selection(
         selection=[
             ('na', 'No studies'),
-            ('elementary', 'Elementary'),
-            ('secondary', 'Secondary'),
+            ('elementary', 'Elementary School'),
+            ('middle', 'Middle School'),
             ('high', 'High School'),
             ('bachelor', 'Bachelor\'s degree'),
             ('postgraduate', 'Postgraduate')

@@ -272,9 +272,9 @@
             <field name="model">medical.record</field>
             <field name="arch" type="xml">
                 <search string="Search Resource">
-                    <field name="name" string="Record Number" />
+                    <field name="number" string="Record Number" />
                     <field name="partner_initial_name" string="Initial" />
-                    <filter name="groupby_partner_initial_name" string="Records for Initial" context="{'group_by': 'partner_initial_name'}" />
+                    <filter name="groupby_partner_initial_name" string="Records by Initial" context="{'group_by': 'partner_initial_name'}" />
                 </search>
             </field>
         </record>
@@ -284,7 +284,7 @@
             <field name="arch" type="xml">
                 <kanban name="medical_record_kanban" default_order="partner_initial_name">
                     <field name="id" />
-                    <field name="name" />
+                    <field name="number" />
                     <field name="partner_id" />
                     <field name="partner_email" />
                     <field name="partner_phone" />
@@ -302,7 +302,7 @@
                                         <strong><field name="partner_id" /></strong>
                                     </div>
                                     <div class="o_kanban_record_subtitle">
-                                        <strong><field name="name" /></strong>
+                                        <strong><field name="number" /></strong>
                                     </div>
                                     <div class="o_kanban_datas">
                                         <!-- <span class="o_kanban_data"><i class="fa fa-envelope-o" role="img" aria-label="Email" title="Email" /> <field name="partner_email" /></span> -->
@@ -319,7 +319,7 @@
             <field name="model">medical.record</field>
             <field name="arch" type="xml">
                 <tree name="medical_record_tree" default_order="partner_initial_name">
-                    <field name="name" />
+                    <field name="number" />
                     <field name="partner_id" />
                 </tree>
             </field>
@@ -347,7 +347,7 @@
                             </h1>
                             <h2 style="width: 75%;">
                                 <field name="auto_numbering" invisible="1" />
-                                <field name="name" placeholder="Record Number" attrs="{'readonly': [('auto_numbering', '=', True)]}" />
+                                <field name="number" placeholder="Record Number" attrs="{'readonly': [('auto_numbering', '=', True)]}" />
                             </h2>
                         </div>
                         <div name="zone_gral_info">
@@ -430,13 +430,22 @@
                                     <field name="auto_numbering" />
                                 </div>
                                 <div class="o_setting_right_pane">
-                                    <label for="auto_numbering"/>
+                                    <label for="auto_numbering" />
                                     <div class="text-muted">
-                                        Records will have auto-numbering (see <i>medical_record_number</i> sequence).
+                                        Records will have auto-numbering (see <i>medical_record_number</i> sequence for example).
                                     </div>
-                                    <!-- <div class="content-group">
-                                        <div id="stock_delivery_ups"/>
-                                    </div> -->
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 o_setting_box" attrs="{'invisible': [('auto_numbering', '=', False)]}">
+                                <div class="o_setting_left_pane">
+                                    <!-- For layout purposes -->
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="seq_auto_numbering_id" style="display: inline-block;" />
+                                    <field name="seq_auto_numbering_id" />
+                                    <div class="text-muted">
+                                        Enable the auto-numbering with the selected sequence.
+                                    </div>
                                 </div>
                             </div>
                         </div>

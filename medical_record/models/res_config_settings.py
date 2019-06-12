@@ -41,6 +41,10 @@ class ResConfigSettings(models.TransientModel):
         string="Auto-Numbering for Records",
         help="Records will have auto-numbering (see <i>medical_record_number</i> sequence)."
     )
+    seq_auto_numbering_id = fields.Many2one(
+        related='company_id.seq_auto_numbering_id',
+        readonly=False
+    )
 
     @api.multi
     def set_values(self):
@@ -65,6 +69,6 @@ class ResConfigSettings(models.TransientModel):
         # the value of the parameter is a nonempty string
         res.update(
             group_group_ses=aux_group_group_ses,
-            auto_numbering=aux_auto_numbering,
+            auto_numbering=aux_auto_numbering
         )
         return res
