@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-29 20:57+0000\n"
-"PO-Revision-Date: 2019-05-29 20:57+0000\n"
+"POT-Creation-Date: 2019-06-11 22:31+0000\n"
+"PO-Revision-Date: 2019-06-11 22:31+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -121,10 +121,10 @@ msgstr "Otros Detalles"
 #. module: medical_record
 #: model:ir.model.fields,help:medical_record.field_medical_record_ses__another_details
 msgid "Any detail that does not take in count above-data."
-msgstr ""
+msgstr "Cualquier detalle que los campo superiores hayan omitido."
 
 #. module: medical_record
-#: code:addons/medical_record/models/medical_record.py:168
+#: code:addons/medical_record/models/medical_record.py:175
 #: model:ir.model.fields,field_description:medical_record.field_medical_record__calendar_event_ids
 #: model_terms:ir.ui.view,arch_db:medical_record.medical_record_form_view
 #, python-format
@@ -155,6 +155,12 @@ msgstr "Conteo de archivos adjuntos"
 #: model:ir.model.fields,field_description:medical_record.field_medical_record__auto_numbering
 msgid "Auto Numbering"
 msgstr "Auto-Nombrado"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_res_company__seq_auto_numbering_id
+#: model:ir.model.fields,field_description:medical_record.field_res_config_settings__seq_auto_numbering_id
+msgid "Auto-Numbering Sequence"
+msgstr "Secuencia de Auto-Nombrado"
 
 #. module: medical_record
 #: model:ir.model.fields,field_description:medical_record.field_res_config_settings__auto_numbering
@@ -204,6 +210,16 @@ msgstr "Descripción breve acerca del registro en la historial."
 #: model:ir.model.fields,field_description:medical_record.field_medical_record_place__city
 msgid "City"
 msgstr "Ciudad"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_medical_record_place__city
+msgid "City where is located the medical place."
+msgstr "Ciudad donde está localizado el lugar médico."
+
+#. module: medical_record
+#: model:ir.model,name:medical_record.model_res_company
+msgid "Companies"
+msgstr "Compañías"
 
 #. module: medical_record
 #: model:ir.model,name:medical_record.model_res_config_settings
@@ -287,7 +303,7 @@ msgstr "Diagnóstico"
 #. module: medical_record
 #: model:ir.model.fields,help:medical_record.field_medical_record__diagnosis
 msgid "Diagnosis about the patient."
-msgstr "Diagnóstico acerca del patience."
+msgstr "Diagnóstico acerca del paciente."
 
 #. module: medical_record
 #: model:ir.model.fields,field_description:medical_record.field_medical_record__display_name
@@ -312,7 +328,7 @@ msgstr "Versión electrónica acerca de los expedientes médicos."
 
 #. module: medical_record
 #: selection:medical.record.ses,studies:0
-msgid "Elementary"
+msgid "Elementary School"
 msgstr "Primaria"
 
 #. module: medical_record
@@ -320,6 +336,17 @@ msgstr "Primaria"
 #: model:ir.model.fields,field_description:medical_record.field_medical_record_place__email
 msgid "Email"
 msgstr "Correo electrónico"
+
+#. module: medical_record
+#: model:ir.model.fields,help:medical_record.field_res_company__seq_auto_numbering_id
+#: model:ir.model.fields,help:medical_record.field_res_config_settings__seq_auto_numbering_id
+msgid "Enable the auto-numbering for medical records with the selected sequence."
+msgstr "Habilita el auto-nombrado para los expendientes médicos con la secuencia seleccionada."
+
+#. module: medical_record
+#: model_terms:ir.ui.view,arch_db:medical_record.inherited_res_config_settings_view_form
+msgid "Enable the auto-numbering with the selected sequence."
+msgstr "Habilita el auto-nombrado con la secuencia seleccionada."
 
 #. module: medical_record
 #: model:ir.model.fields,field_description:medical_record.field_medical_record_log__end_datetime
@@ -457,7 +484,7 @@ msgstr "Si está marcado, hay nuevos mensajes que requieren su atención"
 #. module: medical_record
 #: model:ir.model.fields,help:medical_record.field_medical_record__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr "Si está marcado, hay nuevos mensajes que requieren su atención."
+msgstr "Si está marcado hay nuevos mensajes que requieren su atención."
 
 #. module: medical_record
 #: model:ir.model.fields,help:medical_record.field_medical_record__message_has_error
@@ -503,7 +530,7 @@ msgstr "¿Es requerido el ESE?"
 #. module: medical_record
 #: model:ir.model.fields,help:medical_record.field_medical_record_ses__job
 msgid "Job of the Relative."
-msgstr ""
+msgstr "Trabajo del Familiar."
 
 #. module: medical_record
 #: model:ir.model.fields,field_description:medical_record.field_medical_record____last_update
@@ -671,6 +698,11 @@ msgstr "Error de Envío de Mensaje"
 #: model:ir.model.fields,field_description:medical_record.field_medical_record__message_ids
 msgid "Messages"
 msgstr "Mensajes"
+
+#. module: medical_record
+#: selection:medical.record.ses,studies:0
+msgid "Middle School"
+msgstr "Secundaria"
 
 #. module: medical_record
 #: model:ir.model.fields,field_description:medical_record.field_medical_record__partner_mobile
@@ -850,16 +882,22 @@ msgid "Record"
 msgstr "Expediente"
 
 #. module: medical_record
-#: model:ir.model.fields,field_description:medical_record.field_medical_record__name
+#: code:addons/medical_record/models/medical_record.py:186
+#, python-format
+msgid "Medical Record %s%s%s"
+msgstr "Expediente Médico %s%s%s"
+
+#. module: medical_record
+#: model:ir.model.fields,field_description:medical_record.field_medical_record__number
 #: model_terms:ir.ui.view,arch_db:medical_record.medical_record_form_view
 #: model_terms:ir.ui.view,arch_db:medical_record.medical_record_search_view
 msgid "Record Number"
 msgstr "Número del Expediente"
 
 #. module: medical_record
-#: model:ir.model.fields,help:medical_record.field_medical_record__name
+#: model:ir.model.fields,help:medical_record.field_medical_record__number
 msgid "Record Number."
-msgstr "Número Expediente."
+msgstr "Número de Expediente."
 
 #. module: medical_record
 #: model:ir.ui.menu,name:medical_record.medical_record_menu_root
@@ -870,12 +908,16 @@ msgstr "Expedientes"
 
 #. module: medical_record
 #: model_terms:ir.ui.view,arch_db:medical_record.medical_record_search_view
-msgid "Records for Initial"
-msgstr "Expedientes para Inicial"
+msgid "Records by Initial"
+msgstr "Expedientes por Inicial"
+
+#. module: medical_record
+#: model_terms:ir.ui.view,arch_db:medical_record.inherited_res_config_settings_view_form
+msgid "Records will have auto-numbering (see <i>medical_record_number</i> sequence for example)."
+msgstr "Expedientes serán auto-nombrados (véase la secuencia <i>medical_record_number</i> para ejemplo)."
 
 #. module: medical_record
 #: model:ir.model.fields,help:medical_record.field_res_config_settings__auto_numbering
-#: model_terms:ir.ui.view,arch_db:medical_record.inherited_res_config_settings_view_form
 msgid "Records will have auto-numbering (see <i>medical_record_number</i> sequence)."
 msgstr "Expedientes serán auto-nombrados (véase la secuencia <i>medical_record_number</i>)."
 
@@ -914,11 +956,6 @@ msgstr "Salario"
 #: model_terms:ir.ui.view,arch_db:medical_record.medical_record_search_view
 msgid "Search Resource"
 msgstr "Buscar recurso"
-
-#. module: medical_record
-#: selection:medical.record.ses,studies:0
-msgid "Secondary"
-msgstr "Secuendaria"
 
 #. module: medical_record
 #: model:ir.actions.act_window,name:medical_record.action_medical_record_config_settings
@@ -1037,6 +1074,14 @@ msgstr "Hay 12 meses en un año, tecleen una edad valida por favor\n"
 "(escribiste %s meses)"
 
 #. module: medical_record
+#: code:addons/medical_record/models/medical_record.py:55
+#, python-format
+msgid "There isn't an auto-numbering sequence. Please request a Manager\n"
+"to set it on Settings > Auto-Numbering Sequence."
+msgstr "No hay una sequence de auto-nombrado. Por favor pida a un Administrador que\n"
+"la establezca en Configuración > Sequencia de Auto-Nombrado."
+
+#. module: medical_record
 #: selection:medical.record,activity_state:0
 msgid "Today"
 msgstr "Hoy"
@@ -1093,3 +1138,8 @@ msgstr "Viuda/o"
 #, python-format
 msgid "ZIP %s"
 msgstr "C.P. %s"
+
+#. module: medical_record
+#: sql_constraint:medical.record:0
+msgid "This number has been used in another medical record yet!"
+msgstr "¡Este número has sido usado por otro expediente médico!"

@@ -25,7 +25,7 @@
 {
     'name' : 'Medical Records',
     'author': 'INSPERION',
-    'version' : '1.0',
+    'version' : '1.1',
     'summary': 'Medical Records for Medical Centers.',
     'sequence': 100,
     'description': """
@@ -58,9 +58,7 @@ Medical Records for Medical Centers
         'views/medical_record_menus.xml',
         'report/report_record.xml'
     ],
-    'demo': [
-        'data/medical_record_data.xml',
-    ],
+    'demo': [],
     'qweb': [],
     'installable': True,
     'application': True,

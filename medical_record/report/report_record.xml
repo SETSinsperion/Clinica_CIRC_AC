@@ -46,15 +46,15 @@
                         <div name="diagnosis_title" class="row text-center">
                             <h5>Diagnosis</h5>
                         </div>
-                        <div name="diagnosis_data" class="row row-section" t-if="o.background_ids">
+                        <div name="diagnosis_data" class="row row-section">
                             <h6><t t-esc="o.diagnosis" /></h6>
                         </div>
                     </section>
-                    <section name="backgrounds_section">
+                    <section name="backgrounds_section" t-if="o.background_ids">
                         <div name="backgrounds_title" class="row">
                             <h5>Backgrounds</h5>
                         </div>
-                        <div name="backgrounds_data" class="row row-section" t-if="o.background_ids">
+                        <div name="backgrounds_data" class="row row-section">
                             <t t-set="back_counter" t-value="1" />
                             <table name="backgrounds" class="table backgrounds-table">
                                 <thead>
@@ -77,11 +77,11 @@
                             </table>
                         </div>
                     </section>
-                    <section name="habits_section">
+                    <section name="habits_section" t-if="o.habit_ids">
                         <div name="habits_title" class="row">
                             <h5>Habits</h5>
                         </div>
-                        <div name="habits_data" class="row row-section" t-if="o.habit_ids">
+                        <div name="habits_data" class="row row-section">
                             <t t-set="habit_counter" t-value="1" />
                             <table name="habits" class="table habits-table">
                                 <thead class="thead-dark">
@@ -104,11 +104,11 @@
                             </table>
                         </div>
                     </section>
-                    <section name="logs_section">
+                    <section name="logs_section"  t-if="o.log_ids">
                         <div name="logs_title" class="row">
                             <h5>Logs</h5>
                         </div>
-                        <div name="logs_data" class="row row-section" t-if="o.log_ids">
+                        <div name="logs_data" class="row row-section">
                             <t t-set="log_counter" t-value="1" />
                             <table name="logs" class="table logs-table">
                                 <thead class="thead-dark">
@@ -175,6 +175,6 @@
             report_type="qweb-pdf"
             name="medical_record.report_medical_record"
             file="medical_record.report_medical_record"
-            print_report_name="'Record %s' % (object.name or object.partner_id.name)" />
+            print_report_name="object.get_print_medical_record_name()" />
     </data>
 </odoo>

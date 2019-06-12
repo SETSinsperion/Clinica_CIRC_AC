@@ -26,19 +26,21 @@
 from ast import literal_eval
 
 from odoo import api, fields, models, _
+from odoo.exceptions import ValidationError
 
 
 class MedicalRecord(models.Model):
 
     _name = 'medical.record'
     _description = 'Electronic version about medical records.'
+    _rec_name = 'number'
     # mail.thread = Basic Chatter integration.
     # mail.activity.mixin = Basic Activity integration for chatter.
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
 
     @api.model
-    def _default_name(self):
+    def _default_number(self):
         aux_name = False
         get_param =  self.env['ir.config_parameter'].sudo().get_param
         aux_auto_numbering = literal_eval(get_param(
@@ -46,13 +48,18 @@ class MedicalRecord(models.Model):
         if not aux_auto_numbering:
             aux_auto_numbering = False
         if aux_auto_numbering:
-            aux_name = self.env['ir.sequence'].next_by_code('medical.record.number')
+            auto_numbering_seq = self.env.user.company_id.seq_auto_numbering_id
+            if auto_numbering_seq:
+                aux_name = self.env['ir.sequence'].next_by_code(auto_numbering_seq.code)
+            else:
+                raise ValidationError(_("There isn't an auto-numbering sequence. Please request a Manager\n"
+                    "to set it on Settings > Auto-Numbering Sequence."))
         return aux_name
 
-    name = fields.Char(
+    number = fields.Char(
         string = "Record Number",
         help="Record Number.",
-        default=_default_name
+        default=_default_number
     )
     partner_id = fields.Many2one(
         comodel_name="res.partner",
@@ -131,7 +138,8 @@ class MedicalRecord(models.Model):
 
     _sql_constraints = [
         # A patient CAN'T HAVE > 1 record
-        ('partner_id_unique', 'unique(partner_id)', 'The partner has a medical record yet!')
+        ('partner_id_unique', 'unique(partner_id)', 'The partner has a medical record yet!'),
+        ('number_unique', 'unique(number)', 'This number has been used in another medical record yet!')
     ]
 
     @api.model
@@ -150,12 +158,12 @@ class MedicalRecord(models.Model):
             'medical_record.auto_numbering', default='False'))
         if not aux_auto_numbering:
             aux_auto_numbering = False
-        self.auto_numbering = aux_auto_numbering
+        self.auto_numbering = True if aux_auto_numbering else False
 
     @api.depends('partner_id.name')
     def _compute_partner_initial_name(self):
         for record in self:
-            record.partner_initial_name = record.partner_id.name[0]
+            record.partner_initial_name = record.partner_id.name[0].upper()
 
     @api.depends('calendar_event_ids')
     def _compute_calendar_event_count(self):
@@ -173,3 +181,11 @@ class MedicalRecord(models.Model):
             'domain': [('record_id', '=', self.id)],
         }
         return action
+
+    @api.model
+    def get_print_medical_record_name(self):
+        return _('Medical Record %s%s%s') % (
+            self.number if self.number else '',
+            ' ' if self.number else '',
+            self.partner_id.name
+        )
